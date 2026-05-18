@@ -3,13 +3,23 @@ const nav = document.querySelector("[data-nav]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const revealItems = document.querySelectorAll(".reveal");
 const parallaxItems = document.querySelectorAll("[data-parallax]");
+const scrollProgress = document.querySelector("[data-scroll-progress]");
 
 function setHeaderState() {
   header.classList.toggle("is-scrolled", window.scrollY > 24);
 }
 
+function setScrollProgress() {
+  if (!scrollProgress) return;
+  const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+  scrollProgress.style.setProperty("--scroll-progress", `${Math.min(progress, 100)}%`);
+}
+
 setHeaderState();
+setScrollProgress();
 window.addEventListener("scroll", setHeaderState, { passive: true });
+window.addEventListener("scroll", setScrollProgress, { passive: true });
 
 navToggle.addEventListener("click", () => {
   const isOpen = nav.classList.toggle("is-open");
@@ -70,10 +80,14 @@ function updateParallax() {
     const speed = Number(item.dataset.parallax || 0);
     const rect = item.getBoundingClientRect();
     const offset = (rect.top + rect.height / 2 - viewportMid) * speed;
-    item.style.transform = `translate3d(0, ${offset * -1}px, 0) scale(${item.classList.contains("hero-media") ? 1.08 : 1})`;
+    const scale = item.classList.contains("hero-media") || item.classList.contains("immersive-media") ? 1.08 : 1;
+    item.style.transform = `translate3d(0, ${offset * -1}px, 0) scale(${scale})`;
   });
 }
 
 updateParallax();
 window.addEventListener("scroll", updateParallax, { passive: true });
-window.addEventListener("resize", updateParallax);
+window.addEventListener("resize", () => {
+  setScrollProgress();
+  updateParallax();
+});

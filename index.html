@@ -42,6 +42,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Lewati ke konten</a>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
 
   <header class="site-header" data-header>
     <a class="brand" href="#home" aria-label="Evolution Fitness Malang">
@@ -68,15 +69,20 @@
   <main id="main">
     <section id="home" class="hero section-dark">
       <div class="hero-media parallax-layer" data-parallax="0.16" aria-hidden="true"></div>
+      <div class="hero-foreground parallax-layer" data-parallax="-0.05" aria-hidden="true"></div>
       <div class="hero-vignette" aria-hidden="true"></div>
       <div class="hero-content container">
-        <p class="eyebrow reveal">Hotel Helios Lt.1 · Klojen, Kota Malang</p>
+        <p class="eyebrow reveal">Hotel Helios Lt.1 / Klojen, Kota Malang</p>
         <h1 class="hero-title reveal">Evolve<br><span>Stronger</span></h1>
-        <p class="hero-copy reveal">Company profile landing page untuk gym modern di pusat Malang. Latihan beban, kelas studio, personal training, dan komunitas aktif dalam satu tempat.</p>
+        <p class="hero-copy reveal">A premium fitness destination in the heart of Malang. Strength training, studio classes, personal coaching, and an active community built for measurable progress.</p>
         <div class="hero-actions reveal">
           <a class="button primary" href="https://wa.me/6281217866741?text=Halo%20Evolution%20Fitness%20Malang,%20saya%20mau%20tanya%20membership." target="_blank" rel="noreferrer">Chat WhatsApp</a>
           <a class="button ghost" href="https://maps.app.goo.gl/yt2rtnwbVhL7e5zJA?g_st=ac" target="_blank" rel="noreferrer">Buka Google Maps</a>
         </div>
+      </div>
+
+      <div class="hero-rail reveal" aria-hidden="true">
+        <span>Malang Fitness Club</span>
       </div>
 
       <div class="hero-panel reveal">
@@ -93,12 +99,44 @@
           <span>buka harian</span>
         </div>
       </div>
+      <a class="scroll-cue" href="#about" aria-label="Lihat profil Evolution Fitness">
+        <span></span>
+      </a>
     </section>
 
     <section class="ticker" aria-label="Program kelas">
       <div class="ticker-track">
         <span>Zumba</span><span>Bootcamp</span><span>Aerobic</span><span>Core Mobility</span><span>Body Language</span><span>Pound Fit</span>
         <span>Zumba</span><span>Bootcamp</span><span>Aerobic</span><span>Core Mobility</span><span>Body Language</span><span>Pound Fit</span>
+      </div>
+    </section>
+
+    <section class="standard section-dark">
+      <div class="container standard-grid">
+        <div class="standard-media reveal parallax-layer" data-parallax="0.07">
+          <img src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?q=85&w=1200&auto=format&fit=crop" alt="Member berlatih dengan fokus di gym premium" loading="lazy">
+        </div>
+        <div class="standard-copy">
+          <p class="eyebrow reveal">The Evolution Standard</p>
+          <h2 class="reveal">Designed like an international fitness brand. Grounded in Malang.</h2>
+          <div class="standard-list">
+            <article class="reveal">
+              <span>01</span>
+              <h3>Clear first impression</h3>
+              <p>Hero section langsung menyampaikan brand, lokasi, visual gym, dan CTA utama dalam satu layar.</p>
+            </article>
+            <article class="reveal">
+              <span>02</span>
+              <h3>Premium movement</h3>
+              <p>Parallax layer, reveal timing, dan sticky storytelling dibuat halus agar terasa mahal, bukan ramai.</p>
+            </article>
+            <article class="reveal">
+              <span>03</span>
+              <h3>Conversion ready</h3>
+              <p>WhatsApp, Instagram, Google Maps, harga, jadwal, dan trust signals diletakkan mengikuti alur keputusan calon member.</p>
+            </article>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -176,6 +214,14 @@
       </div>
     </section>
 
+    <section class="immersive section-dark" aria-label="Evolution Fitness training atmosphere">
+      <div class="immersive-media parallax-layer" data-parallax="0.13" aria-hidden="true"></div>
+      <div class="container immersive-content reveal">
+        <p class="eyebrow">Atmosphere</p>
+        <h2>High-energy training, controlled coaching, and a community that keeps moving.</h2>
+      </div>
+    </section>
+
     <section id="schedule" class="schedule section-light">
       <div class="container">
         <div class="section-heading reveal">
@@ -184,12 +230,12 @@
         </div>
 
         <div class="schedule-grid reveal">
-          <article><strong>Senin</strong><span>Body Language · 16.00</span><span>Zumba · 18.30</span></article>
-          <article><strong>Selasa</strong><span>Zumba · 08.00</span><span>Aerobic Pemula · 16.00</span><span>Zumba · 18.30</span></article>
-          <article><strong>Rabu</strong><span>Zumba · 08.30</span><span>Pound Fit · 17.30</span><span>Zumba · 18.30</span></article>
-          <article><strong>Kamis</strong><span>Zumba · 08.30</span><span>Line Dance · 15.00</span><span>Zumba · 18.30</span></article>
-          <article><strong>Jumat</strong><span>Zumba · 08.30</span><span>Aerobic Pemula · 16.00</span><span>Barre Intensity · 18.30</span></article>
-          <article><strong>Sabtu</strong><span>Belly Dance · 11.00</span><span>Zumba · 16.30</span></article>
+          <article><strong>Senin</strong><span>Body Language / 16.00</span><span>Zumba / 18.30</span></article>
+          <article><strong>Selasa</strong><span>Zumba / 08.00</span><span>Aerobic Pemula / 16.00</span><span>Zumba / 18.30</span></article>
+          <article><strong>Rabu</strong><span>Zumba / 08.30</span><span>Pound Fit / 17.30</span><span>Zumba / 18.30</span></article>
+          <article><strong>Kamis</strong><span>Zumba / 08.30</span><span>Line Dance / 15.00</span><span>Zumba / 18.30</span></article>
+          <article><strong>Jumat</strong><span>Zumba / 08.30</span><span>Aerobic Pemula / 16.00</span><span>Barre Intensity / 18.30</span></article>
+          <article><strong>Sabtu</strong><span>Belly Dance / 11.00</span><span>Zumba / 16.30</span></article>
         </div>
         <p class="note reveal">Jadwal dapat berubah. Hubungi admin untuk konfirmasi kelas hari ini.</p>
       </div>
@@ -293,7 +339,7 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <p>© 2026 Evolution Fitness Malang. Landing page concept by Codex.</p>
+      <p>(c) 2026 Evolution Fitness Malang. Landing page concept by Codex.</p>
       <div>
         <a href="https://www.instagram.com/evolution_fitness_malang" target="_blank" rel="noreferrer">Instagram</a>
         <a href="https://maps.app.goo.gl/yt2rtnwbVhL7e5zJA?g_st=ac" target="_blank" rel="noreferrer">Google Maps</a>
