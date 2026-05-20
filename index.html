@@ -162,6 +162,43 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: .72rem;
+      min-width: 0;
+    }
+    .brand-logo {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .10);
+      border: 1px solid rgba(255, 255, 255, .16);
+      padding: 6px;
+      flex: 0 0 auto;
+    }
+    .brand-logo.is-wide {
+      width: 72px;
+      border-radius: 10px;
+    }
+    .brand-lockup-text {
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .hero-brand-logo {
+      width: 98px;
+      height: 98px;
+      object-fit: contain;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .11);
+      border: 1px solid rgba(255, 255, 255, .18);
+      padding: 14px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 24px 72px rgba(0, 0, 0, .35);
+    }
+
   </style>
 </head>
 
@@ -171,8 +208,8 @@
   <nav class="fixed w-full z-50 bg-dark-900/88 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="navbar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-20">
-        <a href="#home" class="font-heading text-2xl font-bold text-white tracking-wider uppercase flex items-center gap-2">
-          Evolution <span class="text-brand-500">Fitness</span>
+        <a href="#home" class="font-heading text-2xl font-bold text-white tracking-wider uppercase flex items-center gap-2 brand-lockup">
+          <img src="https://unavatar.io/instagram/evolution_fitness_malang" alt="Evolution Fitness logo" class="brand-logo" loading="eager"><span class="brand-lockup-text">Evolution Fitness</span>
         </a>
 
         <div class="hidden lg:flex space-x-6 items-center">
@@ -219,6 +256,7 @@
 
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
         <div class="max-w-3xl reveal reveal-up">
+          <img src="https://unavatar.io/instagram/evolution_fitness_malang" alt="Evolution Fitness logo" class="hero-brand-logo mb-7" loading="eager">
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-sm bg-dark-800/80 border border-white/10 text-brand-500 font-medium text-xs tracking-widest uppercase mb-6 backdrop-blur-sm">
             <i class="fas fa-map-marker-alt"></i> Level 1 Hotel Helios, Malang, Indonesia
           </div>
