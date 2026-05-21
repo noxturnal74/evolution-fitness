@@ -1,0 +1,1 @@
+export { GymLandingPage } from "./components";
