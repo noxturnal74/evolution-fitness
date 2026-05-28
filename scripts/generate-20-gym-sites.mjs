@@ -418,6 +418,132 @@ const gyms = [
     hours: 'Contact admin for latest hours',
     facilities: ['Women’s gym', 'Boutique training', 'Classes', 'Private environment'],
     programs: ['Women Strength', 'Class Pass', 'Body Tone', 'Private Coaching', 'Confidence Fitness']
+  },
+  {
+    slug: 'honam-gym',
+    name: 'Honam Gym',
+    city: 'Malang',
+    archetype: 'local',
+    primary: '#16a34a',
+    accent: '#facc15',
+    headline: 'Affordable training near Dau.',
+    positioning: 'Neighborhood Malang gym on Jl. Puncak Esberg with direct WhatsApp contact, approachable facilities, and a practical 06:00 opening rhythm.',
+    philosophy: 'Honam Gym should feel local, affordable, and easy to visit: clear address, friendly training support, and a simple contact-first journey.',
+    source: 'Google Maps data + Instagram + Malang local directory',
+    instagram: 'https://www.instagram.com/honamgym/',
+    whatsapp: 'https://wa.me/6281318885875',
+    maps: 'https://www.google.com/maps/search/?api=1&query=Honam+Gym+Jl+Puncak+Esberg+No.7+Doro+Karangwidoro+Dau+Malang',
+    hours: 'Opens 06:00; latest hours via Google Maps',
+    facilities: ['Gym floor', 'Affordable access', 'Local Dau location', 'WhatsApp admin'],
+    programs: ['Strength Training', 'Body Transformation', 'Beginner Gym', 'Personal Coaching', 'Functional Fitness']
+  },
+  {
+    slug: 'strength-club-malang',
+    name: 'Strength Club Malang',
+    city: 'Malang',
+    archetype: 'hardcore',
+    primary: '#ef4444',
+    accent: '#f97316',
+    headline: 'Strength culture in Puncak Tidar.',
+    positioning: 'Strength-focused gym at Villa Puncak Tidar with premium facilities, coaching team, functional classes, and a serious body-shaping journey.',
+    philosophy: 'Strength Club Malang should feel performance-led and community-backed: disciplined lifting, coaching clarity, and strong route/contact confidence.',
+    source: 'VPT Strength Club website + LatihanFisik + user-provided Instagram/Maps',
+    instagram: 'https://www.instagram.com/strengthclubmalang/',
+    whatsapp: 'https://wa.me/6282141548750',
+    maps: 'https://www.google.com/maps/search/?api=1&query=Strength+Club+Malang+Villa+Puncak+Tidar+H-19+Dau+Malang',
+    hours: 'Mon-Fri 06:00 - 21:00; Sat 06:00 - 19:00; Sun 09:00 - 15:00',
+    facilities: ['Premium facilities', 'Professional coaches', 'Functional classes', 'Coffee bar'],
+    programs: ['Strength Training', 'HIIT', 'Muay Thai', 'Yoga', 'Weightlifting']
+  },
+  {
+    slug: 'de-gym-platinum-malang',
+    name: 'De Gym Platinum Malang',
+    city: 'Malang',
+    archetype: 'chain',
+    primary: '#f97316',
+    accent: '#38bdf8',
+    headline: 'Get fit, get stronger in Malang.',
+    positioning: 'Modern De Gym club presence in Malang with international-standard equipment, certified personal trainers, group classes, and a polished fitness journey.',
+    philosophy: 'De Gym Platinum Malang should feel spacious, professional, and facility-rich with clear class, trainer, and membership inquiry paths.',
+    source: 'De Gym official website + De Gym Malang listing + Instagram',
+    instagram: 'https://www.instagram.com/degym_platinum/',
+    whatsapp: 'https://degymplatinum.com/',
+    maps: 'https://www.google.com/maps/search/?api=1&query=De+Gym+Platinum+Malang',
+    hours: 'Check official club channel for latest hours',
+    facilities: ['International equipment', 'Certified trainers', 'Group class studio', 'Functional area'],
+    programs: ['Strength Training', 'Zumba', 'HIIT', 'Body Combat', 'Muay Thai']
+  },
+  {
+    slug: 'the-gym-asifa-pro',
+    name: 'The Gym Asifa Pro',
+    city: 'Malang',
+    archetype: 'local',
+    primary: '#f59e0b',
+    accent: '#22c55e',
+    headline: 'Comfortable training in Lowokwaru.',
+    positioning: 'Affordable Malang gym in Mojolangu with membership options, personal trainer support, and classes like Zumba, combat art, and Muay Thai.',
+    philosophy: 'The Gym Asifa Pro should feel friendly, practical, and student-aware with clear pricing, class options, and simple location flow.',
+    source: 'LatihanFisik + FitnesLoka + local directory',
+    instagram: 'https://the-gym-asifa-pro.business.site/?utm_source=gmb&utm_medium=referral',
+    whatsapp: 'https://www.google.com/maps/search/?api=1&query=The+Gym+Asifa+Pro+Malang',
+    maps: 'https://www.google.com/maps/search/?api=1&query=The+Gym+Asifa+Pro+Jl+Simpang+Candi+Panggung+Mojolangu+Malang',
+    hours: 'Mon-Fri 07:00 - 21:00; Sat 07:00 - 18:00; Sun 07:00 - 13:00',
+    facilities: ['AC training room', 'Free drinking water', 'Personal trainer', 'Class options'],
+    programs: ['Strength Training', 'Zumba', 'Combat Art', 'Muay Thai', 'Personal Coaching']
+  },
+  {
+    slug: '3c-gym-malang',
+    name: '3C Gym Malang',
+    city: 'Malang',
+    archetype: 'hardcore',
+    primary: '#dc2626',
+    accent: '#facc15',
+    headline: 'First-class coaching in Pisang Candi.',
+    positioning: 'Training-first gym on Jl. Puncak Mandala with Linktree contact flow, qualified coaching positioning, and direct location access.',
+    philosophy: '3C Gym Malang should feel focused and coach-led: direct, compact, hygienic, and easy to ask admin before visiting.',
+    source: 'Official Linktree',
+    instagram: 'https://linktr.ee/3cgym.malang',
+    whatsapp: 'https://linktr.ee/3cgym.malang',
+    maps: 'https://www.google.com/maps/search/?api=1&query=3C+Gym+Malang+Jl+Puncak+Mandala+42+44+Pisang+Candi',
+    hours: 'Contact admin for latest hours',
+    facilities: ['Coaching support', 'Gym floor', 'Pisang Candi access', 'Admin booking'],
+    programs: ['Strength Training', 'Body Transformation', 'Beginner Training', 'Personal Coaching', 'Functional Fitness']
+  },
+  {
+    slug: 'fitnessworks-black-lanners',
+    name: 'Fitnessworks Black Lanners',
+    city: 'Malang',
+    archetype: 'local',
+    primary: '#111827',
+    accent: '#22c55e',
+    headline: 'A bigger fitness space for Malang.',
+    positioning: 'Malang gym destination with spacious training areas, complete equipment, varied classes, friendly service, and professional trainers.',
+    philosophy: 'Fitnessworks Black Lanners should feel complete, friendly, and practical: a roomy gym with classes, trainers, and clear phone contact.',
+    source: 'LatihanFisik + Malang local directory + media article',
+    instagram: 'https://www.instagram.com/fitnessworks.id/',
+    whatsapp: 'https://wa.me/6282180838899',
+    maps: 'https://www.google.com/maps/search/?api=1&query=Fitnessworks+Black+Lanners+Malang',
+    hours: '05:00 - 22:00 from local directory; verify latest before launch',
+    facilities: ['Large gym floor', 'Complete equipment', 'Fitness classes', 'Professional trainers'],
+    programs: ['Strength Training', 'Body Transformation', 'Group Classes', 'Personal Coaching', 'Functional Fitness']
+  },
+  {
+    slug: 'prestige-fitness-malang',
+    name: 'Prestige Fitness Malang',
+    city: 'Malang',
+    archetype: 'wellness',
+    primary: '#d97706',
+    accent: '#fef3c7',
+    headline: 'Polished city training in Klojen.',
+    positioning: 'Klojen fitness center on Jl. Tangkuban Perahu with phone contact, long weekday hours, and a practical premium-city gym feel.',
+    philosophy: 'Prestige Fitness Malang should feel premium but direct: a city gym with clear hours, route confidence, and membership inquiry flow.',
+    source: 'Waze + WorldPlaces + local listing',
+    instagram: 'https://www.instagram.com/prestigefitness__/',
+    whatsapp: 'https://wa.me/6282335133552',
+    maps: 'https://www.google.com/maps/search/?api=1&query=Prestige+Fitness+Jl+Tangkuban+Perahu+No.9+Malang',
+    hours: 'Mon-Fri 06:00 - 23:00; Sat 06:00 - 21:00; Sun 06:00 - 20:00',
+    facilities: ['City gym floor', 'Long weekday hours', 'Personal training inquiry', 'Klojen access'],
+    programs: ['Strength Training', 'Body Transformation', 'Personal Coaching', 'Functional Fitness', 'Beginner Fitness']
   }
 ];
 
@@ -756,13 +882,14 @@ function buildSharedJs() {
 }
 
 function buildHub() {
+  const total = gyms.length;
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Evolution 20 Gym Sites | Local Preview Hub</title>
-  <meta name="description" content="Local preview hub for 20 premium gym landing pages with bidirectional scroll animation.">
+  <title>Evolution Gym Sites | Local Preview Hub</title>
+  <meta name="description" content="Local preview hub for ${total} premium gym landing pages with bidirectional scroll animation.">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -773,8 +900,8 @@ function buildHub() {
 <body>
   <main class="hub">
     <div class="container">
-      <p class="eyebrow">Evolution 20 Gym / local preview</p>
-      <h1>20 premium gym landing pages.</h1>
+      <p class="eyebrow">Evolution Gym / local preview</p>
+      <h1>${total} premium gym landing pages.</h1>
       <p class="hero-text">Every page uses the same production motion spec: bidirectional scroll reveal, repeatable section animation, gallery lightbox, program filters, pricing tiers, WhatsApp/contact CTA, and responsive layout.</p>
       <div class="hub-grid">
         ${gyms.map((gym, index) => `<a class="hub-card reveal" data-animate="fade-up" href="/${gym.slug}/"><span>${String(index + 1).padStart(2, '0')} / ${esc(gym.city)}</span><strong>${esc(gym.name)}</strong><small>${esc(gym.positioning)}</small></a>`).join('')}

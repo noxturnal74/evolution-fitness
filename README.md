@@ -31,7 +31,7 @@ Open:
 http://localhost:4173/
 ```
 
-The generated 20-gym hub is available at:
+The generated 27-gym hub is available at:
 
 ```text
 http://localhost:4173/gyms/
@@ -44,7 +44,7 @@ npm run validate
 npm run build
 ```
 
-## 20 Gym Pages
+## 27 Gym Pages
 
 - `http://localhost:4173/evolution-fitness-malang/`
 - `http://localhost:4173/ftl-gym/`
@@ -66,13 +66,22 @@ npm run build
 - `http://localhost:4173/optimum-fitness-cafe/`
 - `http://localhost:4173/blackbox-gym-bausasran/`
 - `http://localhost:4173/glanzfit-yogyakarta/`
+- `http://localhost:4173/honam-gym/`
+- `http://localhost:4173/strength-club-malang/`
+- `http://localhost:4173/de-gym-platinum-malang/`
+- `http://localhost:4173/the-gym-asifa-pro/`
+- `http://localhost:4173/3c-gym-malang/`
+- `http://localhost:4173/fitnessworks-black-lanners/`
+- `http://localhost:4173/prestige-fitness-malang/`
 
 ## Batch System
 
-- `scripts/generate-20-gym-sites.mjs` regenerates the 20 static gym pages.
+- `scripts/generate-20-gym-sites.mjs` regenerates the 27 static gym pages.
 - `gyms/shared/site.css` contains the shared responsive visual system.
 - `gyms/shared/site.js` contains scroll direction animation, reveal states, filters, package selection, lightbox, and WhatsApp join flow.
 - `GYMS_20_IMPLEMENTATION_REPORT.md` documents the generated pages and verification results.
+- `MALANG_GYM_EXPANSION_REPORT.md` documents the seven new Malang gym records and source strategy.
+- `prd-documents-malang-expansion-v1.0/` contains five new Word PRD documents for the researched Malang expansion gyms.
 
 ## Notes
 

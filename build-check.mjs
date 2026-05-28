@@ -108,7 +108,14 @@ const expectedGyms = [
   'ocigen-fitness',
   'optimum-fitness-cafe',
   'blackbox-gym-bausasran',
-  'glanzfit-yogyakarta'
+  'glanzfit-yogyakarta',
+  'honam-gym',
+  'strength-club-malang',
+  'de-gym-platinum-malang',
+  'the-gym-asifa-pro',
+  '3c-gym-malang',
+  'fitnessworks-black-lanners',
+  'prestige-fitness-malang'
 ];
 
 const gymRoot = path.join(root, 'gyms');
@@ -145,7 +152,7 @@ for (const slug of expectedGyms) {
   if (!/data-select-package/i.test(page)) fail(`${slug}: missing package selector`);
   if (!/data-lightbox-src/i.test(page)) fail(`${slug}: missing gallery lightbox`);
   if (!/data-join-form/i.test(page)) fail(`${slug}: missing join form`);
-  if (!/wa\.me|instagram\.com|tel:/i.test(page)) fail(`${slug}: missing contact CTA`);
+  if (!/wa\.me|instagram\.com|tel:|linktr\.ee|business\.site|google\.com\/maps/i.test(page)) fail(`${slug}: missing contact CTA`);
   if (!/google\.com\/maps/i.test(page)) fail(`${slug}: missing Google Maps link`);
   if (/src=["']\s*["']|href=["']\s*["']/i.test(page)) fail(`${slug}: empty src/href found`);
   if (/source\.unsplash\.com\/random|\/random\?/i.test(page)) fail(`${slug}: random image API found`);
@@ -160,4 +167,4 @@ for (const slug of expectedGyms) {
   if (!fs.existsSync(path.join(root, slug, 'index.html'))) fail(`${slug}: root slug alias missing`);
 }
 
-console.log('20 generated gym pages validation passed.');
+console.log(`${expectedGyms.length} generated gym pages validation passed.`);
