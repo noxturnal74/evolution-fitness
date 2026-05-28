@@ -1,0 +1,60 @@
+{
+  "viewport": {
+    "width": 482,
+    "height": 1052
+  },
+  "title": "Evolution 20 Gym | Premium Transformation Fitness Club",
+  "bodyLength": 5277,
+  "h1Count": 1,
+  "sectionStatus": [
+    [
+      "hero",
+      true
+    ],
+    [
+      "philosophy",
+      true
+    ],
+    [
+      "programs",
+      true
+    ],
+    [
+      "motion",
+      true
+    ],
+    [
+      "membership",
+      true
+    ],
+    [
+      "coaches",
+      true
+    ],
+    [
+      "proof",
+      true
+    ],
+    [
+      "gallery",
+      true
+    ],
+    [
+      "join",
+      true
+    ]
+  ],
+  "scrollWidth": 487,
+  "clientWidth": 467,
+  "imageCount": 14,
+  "brokenImages": [],
+  "modalOpened": true,
+  "visibleProgramsAfterStrengthFilter": 2,
+  "lightboxOpened": true,
+  "hasScrollMotionController": true,
+  "scrollMotionState": {
+    "direction": "down",
+    "elements": 37
+  },
+  "browserErrors": []
+}

@@ -2,3 +2,9 @@ node_modules/
 .vercel-cache/
 .vercel/
 .env*.local
+.chrome*/
+evolution20-*.png
+gyms-*.png
+__pycache__/
+*.pyc
+*.zip

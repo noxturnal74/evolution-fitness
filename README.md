@@ -1,35 +1,79 @@
-# Evolution Fitness Malang Landing Page
+# Evolution 20 Gym
 
-Static English company profile landing page for Evolution Fitness Malang with a premium international gym aesthetic, parallax sections, studio classes, weekly schedule, memberships, Personal Training packages, WhatsApp CTA, and embedded Google Maps.
+Premium static landing page for a transformation-focused fitness brand.
 
-## File
+## Built From
 
-- `index.html` - full landing page, Tailwind CDN setup, SEO meta, parallax styling, CTA, and embedded Google Maps.
-- `styles.css` - legacy stylesheet kept for earlier custom version; the current page is self-contained in `index.html`.
-- `script.js` - legacy script kept for earlier custom version; the current page uses inline interaction scripts.
+- `product-spec-scroll-animation-v1.0/01-PRD-bidirectional-scroll-animation.docx`
+- `product-spec-scroll-animation-v1.0/02-SRS-bidirectional-scroll-animation.docx`
+- `product-spec-scroll-animation-v1.0/03-SDD-bidirectional-scroll-animation.docx`
+- `product-spec-scroll-animation-v1.0/04-UI-UX-FLOW-bidirectional-scroll-animation.docx`
+- `product-spec-scroll-animation-v1.0/05-TASK-BREAKDOWN-bidirectional-scroll-animation.docx`
+- `product-spec-scroll-animation-v1.0/.codex/skills/ui-ux-pro-max/SKILL.md`
 
-## Local Preview
+## Design Direction
 
-Buka `index.html` langsung di browser, atau jalankan server statis:
+- Dark athletic premium style
+- Orange primary, green conversion accent
+- Barlow Condensed headings and Barlow body
+- Storytelling landing structure with repeatable bidirectional scroll animation
+- Progressive reveal, light parallax, gallery lightbox, package selector, trial modal, and WhatsApp booking generator
+
+## Run Locally
 
 ```bash
-python -m http.server 4173
+npm run dev
 ```
 
-Lalu buka `http://localhost:4173`.
+Open:
 
-## Public References
+```text
+http://localhost:4173/
+```
 
-- Instagram: https://www.instagram.com/evolution_fitness_malang
-- Google Maps: https://maps.app.goo.gl/yt2rtnwbVhL7e5zJA?g_st=ac
-- Referensi profil/alamat: https://infomalang.com/evolution-fitness-malang-jawaban-gaya-hidup-sehat/
-- Referensi fasilitas/harga: https://latihanfisik.com/gym-detail/evolution-fitness-malang/
-- Referensi ulasan dan nomor WhatsApp: https://malang.tempat.info/tempat-gym-malang/
+The generated 20-gym hub is available at:
 
-## Deploy to GitHub Pages
+```text
+http://localhost:4173/gyms/
+```
 
-1. Push repository ke GitHub.
-2. Buka repository Settings.
-3. Masuk ke Pages.
-4. Pilih deploy dari branch `main` folder `/root`.
-5. Simpan, lalu tunggu URL GitHub Pages aktif.
+## Validate
+
+```bash
+npm run validate
+npm run build
+```
+
+## 20 Gym Pages
+
+- `http://localhost:4173/gyms/evolution-fitness-malang/`
+- `http://localhost:4173/gyms/ftl-gym/`
+- `http://localhost:4173/gyms/fitness-plus-dinoyo/`
+- `http://localhost:4173/gyms/fitx-gym/`
+- `http://localhost:4173/gyms/osbond-gym/`
+- `http://localhost:4173/gyms/belle-crown-gym/`
+- `http://localhost:4173/gyms/draco-gym/`
+- `http://localhost:4173/gyms/planet-gym-surabaya/`
+- `http://localhost:4173/gyms/new-icon-gym/`
+- `http://localhost:4173/gyms/speedrocky-gym/`
+- `http://localhost:4173/gyms/warriors-gym-surabaya/`
+- `http://localhost:4173/gyms/audid-gym/`
+- `http://localhost:4173/gyms/champion-gym-surabaya/`
+- `http://localhost:4173/gyms/crystal-gym-aerobic/`
+- `http://localhost:4173/gyms/m-gym-malang/`
+- `http://localhost:4173/gyms/dm-gym-yogyakarta/`
+- `http://localhost:4173/gyms/ocigen-fitness/`
+- `http://localhost:4173/gyms/optimum-fitness-cafe/`
+- `http://localhost:4173/gyms/blackbox-gym-bausasran/`
+- `http://localhost:4173/gyms/glanzfit-yogyakarta/`
+
+## Batch System
+
+- `scripts/generate-20-gym-sites.mjs` regenerates the 20 static gym pages.
+- `gyms/shared/site.css` contains the shared responsive visual system.
+- `gyms/shared/site.js` contains scroll direction animation, reveal states, filters, package selection, lightbox, and WhatsApp join flow.
+- `GYMS_20_IMPLEMENTATION_REPORT.md` documents the generated pages and verification results.
+
+## Notes
+
+Some business details are intentionally marked as placeholders because Evolution 20 Gym is treated as a new brand concept and several gym records still need final verification. Replace unverified pricing, trainer profiles, logos, and branch-specific claims with verified production data before launch.

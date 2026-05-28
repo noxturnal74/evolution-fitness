@@ -1,0 +1,582 @@
+[
+  {
+    "slug": "evolution-fitness-malang",
+    "name": "Evolution Fitness Malang",
+    "city": "Malang",
+    "archetype": "local",
+    "primary": "#e11d48",
+    "accent": "#f97316",
+    "headline": "Fit for life, built in Malang.",
+    "positioning": "Energetic local gym with classes, community movement, and direct WhatsApp registration.",
+    "philosophy": "Evolution Fitness Malang is positioned as a transformation-focused local club where gym floor discipline meets studio class energy.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/evolution_fitness_malang/",
+    "whatsapp": "https://wa.me/6282228862049",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Evolution+Fitness+Malang",
+    "hours": "Daily 06:00 - 21:00",
+    "facilities": [
+      "Gym floor",
+      "Studio classes",
+      "Personal training",
+      "Community sessions"
+    ],
+    "programs": [
+      "Strength Training",
+      "Body Transformation",
+      "Zumba / Studio Class",
+      "Personal Coaching",
+      "Functional Fitness"
+    ]
+  },
+  {
+    "slug": "ftl-gym",
+    "name": "FTL Gym",
+    "city": "Indonesia",
+    "archetype": "chain",
+    "primary": "#0ea5e9",
+    "accent": "#a3ff12",
+    "headline": "All-in access for every training rhythm.",
+    "positioning": "Modern chain-gym ecosystem with 24/7 access, group classes, Pilates+, and lifestyle facilities.",
+    "philosophy": "FTL Gym should feel like a networked fitness ecosystem: clean, app-like, confident, and built for repeat visits.",
+    "source": "ftlgym.com + Linktree + Instagram",
+    "instagram": "https://www.instagram.com/ftlgym.id/",
+    "whatsapp": "https://wa.me/62818687858",
+    "maps": "https://www.google.com/maps/search/?api=1&query=FTL+Gym",
+    "hours": "24/7 access at selected clubs",
+    "facilities": [
+      "60+ clubs",
+      "Pilates+",
+      "Les Mills classes",
+      "Sauna / steam / jacuzzi"
+    ],
+    "programs": [
+      "24/7 Access",
+      "Pilates+",
+      "Group Classes",
+      "Personal Training",
+      "Club Network"
+    ]
+  },
+  {
+    "slug": "fitness-plus-dinoyo",
+    "name": "Fitness Plus Dinoyo",
+    "city": "Malang",
+    "archetype": "chain",
+    "primary": "#d4af37",
+    "accent": "#10b981",
+    "headline": "Always positive, always progressing.",
+    "positioning": "Corporate 24-hour mega gym with international equipment, classes, and personal trainer support.",
+    "philosophy": "Fitness Plus Dinoyo needs to feel complete and facility-first: big equipment depth, reliable access, and practical membership value.",
+    "source": "fitnessplusindonesia.co.id + Instagram",
+    "instagram": "https://www.instagram.com/fitnessplus.dinoyo/",
+    "whatsapp": "https://wa.me/6281130051777",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Fitness+Plus+Dinoyo+Malang",
+    "hours": "24-hour gym concept",
+    "facilities": [
+      "100+ equipment",
+      "Fun classes",
+      "Personal trainers",
+      "Mega gym floor"
+    ],
+    "programs": [
+      "Strength Area",
+      "Cardio Training",
+      "Fun Classes",
+      "Body Transformation",
+      "PT Coaching"
+    ]
+  },
+  {
+    "slug": "fitx-gym",
+    "name": "FITX Gym",
+    "city": "Indonesia",
+    "archetype": "chain",
+    "primary": "#8bc34a",
+    "accent": "#ffffff",
+    "headline": "Extend your limit with X-Squad energy.",
+    "positioning": "Futuristic premium-affordable 24/7 gym with 90+ machines, classes, recovery, and lifestyle add-ons.",
+    "philosophy": "FITX Gym should feel bright, modern, high-value, and youthful without becoming too gaming or neon-heavy.",
+    "source": "fitxgym.id + Linktree",
+    "instagram": "https://www.instagram.com/fitxgym.id/",
+    "whatsapp": "https://wa.me/6281188021085",
+    "maps": "https://www.google.com/maps/search/?api=1&query=FITX+Gym",
+    "hours": "24/7 access",
+    "facilities": [
+      "90+ machines",
+      "1,000+ monthly classes",
+      "Sauna / ice bath",
+      "Pilates / spinning"
+    ],
+    "programs": [
+      "X-Squad Training",
+      "Pilates",
+      "Spinning",
+      "Strength Training",
+      "Recovery"
+    ]
+  },
+  {
+    "slug": "osbond-gym",
+    "name": "Osbond Gym",
+    "city": "Indonesia",
+    "archetype": "chain",
+    "primary": "#ef1b1b",
+    "accent": "#ffffff",
+    "headline": "One stop body needs.",
+    "positioning": "Established national gym with 30+ clubs, all-club access, premium equipment, pool, sauna, steam, and ice bath.",
+    "philosophy": "Osbond Gym should read as reliable, broad, and established with clear club credibility and facility proof.",
+    "source": "osbondgym.com + club page",
+    "instagram": "https://www.instagram.com/osbondgym/",
+    "whatsapp": "https://www.osbondgym.com/contact-us",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Osbond+Gym",
+    "hours": "Check nearest club",
+    "facilities": [
+      "30+ clubs",
+      "160+ classes",
+      "Premium equipment",
+      "Pool / sauna / steam"
+    ],
+    "programs": [
+      "All Club Access",
+      "Group Classes",
+      "Personal Training",
+      "Recovery Facilities",
+      "Strength Floor"
+    ]
+  },
+  {
+    "slug": "belle-crown-gym",
+    "name": "Belle Crown Gym",
+    "city": "Malang",
+    "archetype": "wellness",
+    "primary": "#1e3a8a",
+    "accent": "#e11d48",
+    "headline": "Comfort fitness with pool-side energy.",
+    "positioning": "Semi-premium Malang wellness gym with swimming pool, 10+ classes, and personal training.",
+    "philosophy": "Belle Crown should feel elegant, calm, and trust-building with a comfort-first gym and pool experience.",
+    "source": "bellecrown.id + Linktree + Instagram",
+    "instagram": "https://www.instagram.com/bellecrown.gym/",
+    "whatsapp": "https://linktr.ee/bellecrownindonesia",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Belle+Crown+Gym+Lembah+Dieng+Malang",
+    "hours": "Check official Linktree",
+    "facilities": [
+      "Swimming pool",
+      "10+ classes",
+      "Personal trainer",
+      "Comfort training floor"
+    ],
+    "programs": [
+      "Wellness Training",
+      "Swimming Access",
+      "Group Classes",
+      "Personal Coaching",
+      "Strength Basics"
+    ]
+  },
+  {
+    "slug": "draco-gym",
+    "name": "Draco Gym",
+    "city": "Surabaya",
+    "archetype": "hardcore",
+    "primary": "#dc2626",
+    "accent": "#f97316",
+    "headline": "Train fierce in Kalijudan.",
+    "positioning": "Dark-bold local gym focused on personal training, strength, and serious daily discipline.",
+    "philosophy": "Draco Gym should feel sharp and performance-first, with a fierce identity but clear practical contact flow.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/draco.gym_/",
+    "whatsapp": "https://wa.me/62895385588866",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Draco+Gym+Kalijudan+Surabaya",
+    "hours": "Daily 06:00 - 22:00",
+    "facilities": [
+      "Strength floor",
+      "PT coaching",
+      "Free weights",
+      "Local community"
+    ],
+    "programs": [
+      "Strength Training",
+      "PT Session",
+      "Muscle Building",
+      "Beginner Form",
+      "Conditioning"
+    ]
+  },
+  {
+    "slug": "planet-gym-surabaya",
+    "name": "Planet Gym Surabaya",
+    "city": "Surabaya",
+    "archetype": "local",
+    "primary": "#22c55e",
+    "accent": "#38bdf8",
+    "headline": "Banyu Urip fitness for everyday progress.",
+    "positioning": "Urban Surabaya fitness center with workout area, boxing, cardio, aerobic, classes, and PT.",
+    "philosophy": "Planet Gym should feel city-local, active, accessible, and easy to contact for daily fitness needs.",
+    "source": "Instagram",
+    "instagram": "https://www.instagram.com/planetgymsby/",
+    "whatsapp": "https://wa.me/628113451228",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Planet+Gym+Banyu+Urip+248+Surabaya",
+    "hours": "Contact admin for latest schedule",
+    "facilities": [
+      "Workout area",
+      "Boxing area",
+      "Cardio",
+      "Aerobic classes"
+    ],
+    "programs": [
+      "Fitness Center",
+      "Boxing Basics",
+      "Aerobic Class",
+      "Personal Training",
+      "Cardio Program"
+    ]
+  },
+  {
+    "slug": "new-icon-gym",
+    "name": "New Icon Gym",
+    "city": "Surabaya",
+    "archetype": "local",
+    "primary": "#f97316",
+    "accent": "#facc15",
+    "headline": "Become your new icon.",
+    "positioning": "Surabaya local transformation gym with practical access, trainer support, and Google Maps clarity.",
+    "philosophy": "New Icon Gym should feel aspirational but practical: a clean place to become a new version of yourself.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/new.icon.gym/",
+    "whatsapp": "https://wa.me/6281216115104",
+    "maps": "https://www.google.com/maps/search/?api=1&query=New+Icon+Gym+Barata+Jaya+59+Surabaya",
+    "hours": "Contact admin for latest hours",
+    "facilities": [
+      "Gym floor",
+      "Aerobic",
+      "Trainer support",
+      "Barata Jaya location"
+    ],
+    "programs": [
+      "Transformation Plan",
+      "Gym Access",
+      "Aerobic Movement",
+      "PT Intro",
+      "Strength Basics"
+    ]
+  },
+  {
+    "slug": "speedrocky-gym",
+    "name": "SpeedRocky Gym",
+    "city": "Surabaya",
+    "archetype": "hardcore",
+    "primary": "#f59e0b",
+    "accent": "#ef4444",
+    "headline": "Old-school strength, faster grit.",
+    "positioning": "Hardcore bodybuilding-style gym in Keputih with gritty strength identity and practical contact path.",
+    "philosophy": "SpeedRocky should feel raw, serious, and old-school, built for people who want no-nonsense strength work.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/speedrocky_gym/",
+    "whatsapp": "tel:+62315932336",
+    "maps": "https://www.google.com/maps/search/?api=1&query=SpeedRocky+Gym+Keputih+Utara+83+Surabaya",
+    "hours": "Contact by phone for latest hours",
+    "facilities": [
+      "Free weights",
+      "Bodybuilding floor",
+      "Machines",
+      "Local strength community"
+    ],
+    "programs": [
+      "Bodybuilding",
+      "Strength Training",
+      "Muscle Gain",
+      "Conditioning Challenge",
+      "Form Coaching"
+    ]
+  },
+  {
+    "slug": "warriors-gym-surabaya",
+    "name": "Warriors Gym Surabaya",
+    "city": "Surabaya",
+    "archetype": "hardcore",
+    "primary": "#b91c1c",
+    "accent": "#f97316",
+    "headline": "Discipline starts in Manyar.",
+    "positioning": "Semi-hardcore Surabaya strength community with private training, functional training, and warrior-style tone.",
+    "philosophy": "Warriors Gym should carry discipline and community proof without looking identical to Draco or SpeedRocky.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/warriorsgym_sby/",
+    "whatsapp": "https://www.instagram.com/warriorsgym_sby/",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Warriors+Gym+Manyar+Adi+II+No+35+Surabaya",
+    "hours": "Check Instagram for latest hours",
+    "facilities": [
+      "Private training",
+      "Functional training",
+      "Strength floor",
+      "Community gym"
+    ],
+    "programs": [
+      "Warrior Strength",
+      "Private Training",
+      "Functional Fitness",
+      "Transformation",
+      "Community Class"
+    ]
+  },
+  {
+    "slug": "audid-gym",
+    "name": "Audid Gym",
+    "city": "Surabaya",
+    "archetype": "lifestyle",
+    "primary": "#06b6d4",
+    "accent": "#22c55e",
+    "headline": "A sport complex for active Surabaya.",
+    "positioning": "Multi-sport complex with gym, basketball, pickleball, jogging track, calisthenics, boxing, pool, and ice bath.",
+    "philosophy": "Audid Gym should feel broader than a gym: an active sport complex where training choices stay practical.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/audidgym/",
+    "whatsapp": "https://wa.me/6282229304618",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Audid+Gym+Klampis+Jaya+Surabaya",
+    "hours": "Contact admin for latest schedule",
+    "facilities": [
+      "Basketball",
+      "Pickleball",
+      "Jogging track",
+      "Pool / ice bath"
+    ],
+    "programs": [
+      "Gym Training",
+      "Boxing",
+      "Calisthenics",
+      "Court Sports",
+      "Recovery"
+    ]
+  },
+  {
+    "slug": "champion-gym-surabaya",
+    "name": "Champion Gym Surabaya",
+    "city": "Surabaya",
+    "archetype": "local",
+    "primary": "#facc15",
+    "accent": "#22c55e",
+    "headline": "Train comfortable, leave like a champion.",
+    "positioning": "Budget-comfort gym with full AC, free parking, comfortable training space, PT, and membership promos.",
+    "philosophy": "Champion Gym should feel achievement-focused and practical, with comfort and access as selling points.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/champion.gym.sby/",
+    "whatsapp": "https://wa.me/6281331717779",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Champion+Gym+Klampis+Semolo+Timur+6C+Surabaya",
+    "hours": "Contact admin for latest hours",
+    "facilities": [
+      "Full AC",
+      "Free parking",
+      "Comfortable gym floor",
+      "Personal trainer"
+    ],
+    "programs": [
+      "Champion Plan",
+      "Gym Access",
+      "PT Coaching",
+      "Body Tone",
+      "Beginner Strength"
+    ]
+  },
+  {
+    "slug": "crystal-gym-aerobic",
+    "name": "Crystal Gym & Aerobic",
+    "city": "Surabaya",
+    "archetype": "wellness",
+    "primary": "#14b8a6",
+    "accent": "#f97316",
+    "headline": "Friendly gym and aerobic movement.",
+    "positioning": "Friendly gym and aerobic center in Surabaya with community class energy and direct WhatsApp booking.",
+    "philosophy": "Crystal Gym & Aerobic should feel active and social, more class-oriented than hardcore strength-only.",
+    "source": "Instagram",
+    "instagram": "https://www.instagram.com/newcrystalgym/",
+    "whatsapp": "https://wa.me/6282233225222",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Crystal+Gym+And+Aerobic+Soponyono+19+Surabaya",
+    "hours": "Contact admin for class schedule",
+    "facilities": [
+      "Aerobic studio",
+      "Gym access",
+      "Body weight training",
+      "Community classes"
+    ],
+    "programs": [
+      "Aerobic Class",
+      "Body Weight",
+      "Gym Access",
+      "Class Pass",
+      "Beginner Fitness"
+    ]
+  },
+  {
+    "slug": "m-gym-malang",
+    "name": "M Gym Malang",
+    "city": "Malang",
+    "archetype": "local",
+    "primary": "#16a34a",
+    "accent": "#f97316",
+    "headline": "Student-friendly training near ABM.",
+    "positioning": "Practical Malang gym near STIE Malangkucecwara / ABM with approachable access and PT potential.",
+    "philosophy": "M Gym Malang should feel simple, friendly, and useful for students and everyday members.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/mgym.abm/",
+    "whatsapp": "https://www.instagram.com/mgym.abm/",
+    "maps": "https://www.google.com/maps/search/?api=1&query=M+Gym+STIE+Malangkucecwara+ABM+Malang",
+    "hours": "Contact Instagram for latest hours",
+    "facilities": [
+      "Student-friendly access",
+      "Gym floor",
+      "Personal training",
+      "ABM area location"
+    ],
+    "programs": [
+      "Daily Gym",
+      "Student Plan",
+      "PT Intro",
+      "Strength Basics",
+      "Fitness Habit"
+    ]
+  },
+  {
+    "slug": "dm-gym-yogyakarta",
+    "name": "DM Gym / DM Fitness Yogyakarta",
+    "city": "Yogyakarta",
+    "archetype": "local",
+    "primary": "#f97316",
+    "accent": "#38bdf8",
+    "headline": "Jogja community fitness with branch access.",
+    "positioning": "Accessible Yogyakarta gym with studio options, women area potential, all-branch membership, PT, classes, and basketball.",
+    "philosophy": "DM Gym should feel warm and practical: community fitness for students, workers, and class-goers.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/dm_fitnessjogja/",
+    "whatsapp": "https://wa.me/6287832893128",
+    "maps": "https://www.google.com/maps/search/?api=1&query=DM+Fitness+Jl+Veteran+No+23+Yogyakarta",
+    "hours": "Contact admin for latest hours",
+    "facilities": [
+      "Studio 1-4",
+      "Women area",
+      "All-branch membership",
+      "Basketball court"
+    ],
+    "programs": [
+      "Gym Membership",
+      "Classes",
+      "PT Coaching",
+      "Women Area",
+      "Basketball Access"
+    ]
+  },
+  {
+    "slug": "ocigen-fitness",
+    "name": "OCIGEN Fitness",
+    "city": "Yogyakarta",
+    "archetype": "wellness",
+    "primary": "#0ea5e9",
+    "accent": "#22c55e",
+    "headline": "Fresh training above the city.",
+    "positioning": "Premium hotel fitness center at KJ Hotel with pool, Muay Thai, Pound Fit, Yoga, Zumba, and modern equipment.",
+    "philosophy": "OCIGEN Fitness should feel breathable and hotel-premium: wellness plus performance in one calm system.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/ocigen.id/",
+    "whatsapp": "https://www.instagram.com/ocigen.id/",
+    "maps": "https://www.google.com/maps/search/?api=1&query=OCIGEN+Physical+Fitness+Center+KJ+Hotel+Yogyakarta",
+    "hours": "Daily 06:00 - 21:00",
+    "facilities": [
+      "Pool",
+      "Muay Thai",
+      "Pound Fit",
+      "Yoga / Zumba"
+    ],
+    "programs": [
+      "Wellness Training",
+      "Muay Thai",
+      "Yoga",
+      "Zumba",
+      "Personal Training"
+    ]
+  },
+  {
+    "slug": "optimum-fitness-cafe",
+    "name": "Optimum Fitness & Cafe",
+    "city": "Yogyakarta",
+    "archetype": "lifestyle",
+    "primary": "#a16207",
+    "accent": "#22c55e",
+    "headline": "Train harder, recover better.",
+    "positioning": "Hybrid fitness and healthy cafe concept with class, InBody test, locker, towel, and student-friendly Jogja lifestyle.",
+    "philosophy": "Optimum Fitness & Cafe must not look like a normal gym only. It should feel like train, recover, and socialize in one destination.",
+    "source": "LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/optimumfcyogyakarta/",
+    "whatsapp": "https://www.instagram.com/optimumfcyogyakarta/",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Optimum+Fitness+Cafe+RW+Monginsidi+39+Yogyakarta",
+    "hours": "Contact admin for latest hours",
+    "facilities": [
+      "Healthy cafe",
+      "InBody test",
+      "Locker / towel",
+      "Classes"
+    ],
+    "programs": [
+      "Gym Package",
+      "Cafe Recovery",
+      "Class Schedule",
+      "InBody Check",
+      "Student Fitness"
+    ]
+  },
+  {
+    "slug": "blackbox-gym-bausasran",
+    "name": "BlackBox Gym Bausasran",
+    "city": "Yogyakarta",
+    "archetype": "hardcore",
+    "primary": "#ffffff",
+    "accent": "#f97316",
+    "headline": "Dark urban training, open all day.",
+    "positioning": "Urban dark gym in Bausasran with 24-hour access, Pro package, Pilates studio, HYROX class, sauna, locker, shower, full AC, and PT.",
+    "philosophy": "BlackBox should feel industrial, focused, and no-nonsense with a modern cafe-like edge.",
+    "source": "blackbox.camp + LatihanFisik + Instagram",
+    "instagram": "https://www.instagram.com/blackbox.camp/",
+    "whatsapp": "https://www.instagram.com/blackbox.camp/",
+    "maps": "https://www.google.com/maps/search/?api=1&query=BlackBox+Gym+Bausasran+No+22+Yogyakarta",
+    "hours": "24-hour gym concept",
+    "facilities": [
+      "24-hour access",
+      "Pilates studio",
+      "HYROX class",
+      "Sauna / locker / shower"
+    ],
+    "programs": [
+      "BlackBox Training",
+      "HYROX Class",
+      "Pilates Studio",
+      "Pro Package",
+      "PT Coaching"
+    ]
+  },
+  {
+    "slug": "glanzfit-yogyakarta",
+    "name": "Glanzfit Yogyakarta",
+    "city": "Yogyakarta",
+    "archetype": "wellness",
+    "primary": "#ec4899",
+    "accent": "#f9a8d4",
+    "headline": "Women-focused fitness with privacy and style.",
+    "positioning": "Women’s boutique gym in Yogyakarta with clean, private, feminine, class-based fitness appeal.",
+    "philosophy": "Glanzfit should feel boutique, clean, and confidence-building with privacy and modern women-focused support.",
+    "source": "Instagram",
+    "instagram": "https://www.instagram.com/glanzfit.id/",
+    "whatsapp": "https://wa.me/6287846351704",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Glanzfit+Women+Gym+Yogyakarta",
+    "hours": "Contact admin for latest hours",
+    "facilities": [
+      "Women’s gym",
+      "Boutique training",
+      "Classes",
+      "Private environment"
+    ],
+    "programs": [
+      "Women Strength",
+      "Class Pass",
+      "Body Tone",
+      "Private Coaching",
+      "Confidence Fitness"
+    ]
+  }
+]

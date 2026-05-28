@@ -1,0 +1,11 @@
+{
+  "name": "evolution-fitness-malang",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node scripts/static-server.mjs . 4173",
+    "start": "node scripts/static-server.mjs . 4173",
+    "validate": "node build-check.mjs",
+    "build": "node build-check.mjs"
+  }
+}
