@@ -5,6 +5,7 @@ node_modules/
 .chrome*/
 evolution20-*.png
 gyms-*.png
+*-production.png
 __pycache__/
 *.pyc
 *.zip
