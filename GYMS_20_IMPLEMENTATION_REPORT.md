@@ -60,26 +60,26 @@ The project now includes a multi-page static website system for 20 gym landing p
 ## Local Preview Links
 
 - Hub: `http://localhost:4173/gyms/`
-- Evolution Fitness Malang: `http://localhost:4173/gyms/evolution-fitness-malang/`
-- FTL Gym: `http://localhost:4173/gyms/ftl-gym/`
-- Fitness Plus Dinoyo: `http://localhost:4173/gyms/fitness-plus-dinoyo/`
-- FITX Gym: `http://localhost:4173/gyms/fitx-gym/`
-- Osbond Gym: `http://localhost:4173/gyms/osbond-gym/`
-- Belle Crown Gym: `http://localhost:4173/gyms/belle-crown-gym/`
-- Draco Gym: `http://localhost:4173/gyms/draco-gym/`
-- Planet Gym Surabaya: `http://localhost:4173/gyms/planet-gym-surabaya/`
-- New Icon Gym: `http://localhost:4173/gyms/new-icon-gym/`
-- SpeedRocky Gym: `http://localhost:4173/gyms/speedrocky-gym/`
-- Warriors Gym Surabaya: `http://localhost:4173/gyms/warriors-gym-surabaya/`
-- Audid Gym: `http://localhost:4173/gyms/audid-gym/`
-- Champion Gym Surabaya: `http://localhost:4173/gyms/champion-gym-surabaya/`
-- Crystal Gym & Aerobic: `http://localhost:4173/gyms/crystal-gym-aerobic/`
-- M Gym Malang: `http://localhost:4173/gyms/m-gym-malang/`
-- DM Gym Yogyakarta: `http://localhost:4173/gyms/dm-gym-yogyakarta/`
-- OCIGEN Fitness: `http://localhost:4173/gyms/ocigen-fitness/`
-- Optimum Fitness & Cafe: `http://localhost:4173/gyms/optimum-fitness-cafe/`
-- BlackBox Gym Bausasran: `http://localhost:4173/gyms/blackbox-gym-bausasran/`
-- Glanzfit Yogyakarta: `http://localhost:4173/gyms/glanzfit-yogyakarta/`
+- Evolution Fitness Malang: `http://localhost:4173/evolution-fitness-malang/`
+- FTL Gym: `http://localhost:4173/ftl-gym/`
+- Fitness Plus Dinoyo: `http://localhost:4173/fitness-plus-dinoyo/`
+- FITX Gym: `http://localhost:4173/fitx-gym/`
+- Osbond Gym: `http://localhost:4173/osbond-gym/`
+- Belle Crown Gym: `http://localhost:4173/belle-crown-gym/`
+- Draco Gym: `http://localhost:4173/draco-gym/`
+- Planet Gym Surabaya: `http://localhost:4173/planet-gym-surabaya/`
+- New Icon Gym: `http://localhost:4173/new-icon-gym/`
+- SpeedRocky Gym: `http://localhost:4173/speedrocky-gym/`
+- Warriors Gym Surabaya: `http://localhost:4173/warriors-gym-surabaya/`
+- Audid Gym: `http://localhost:4173/audid-gym/`
+- Champion Gym Surabaya: `http://localhost:4173/champion-gym-surabaya/`
+- Crystal Gym & Aerobic: `http://localhost:4173/crystal-gym-aerobic/`
+- M Gym Malang: `http://localhost:4173/m-gym-malang/`
+- DM Gym Yogyakarta: `http://localhost:4173/dm-gym-yogyakarta/`
+- OCIGEN Fitness: `http://localhost:4173/ocigen-fitness/`
+- Optimum Fitness & Cafe: `http://localhost:4173/optimum-fitness-cafe/`
+- BlackBox Gym Bausasran: `http://localhost:4173/blackbox-gym-bausasran/`
+- Glanzfit Yogyakarta: `http://localhost:4173/glanzfit-yogyakarta/`
 
 ## Verification
 

@@ -439,7 +439,7 @@ function ctaHref(gym) {
 }
 
 function pageUrl(gym) {
-  return `/gyms/${gym.slug}/`;
+  return `/${gym.slug}/`;
 }
 
 function initials(name) {
@@ -706,7 +706,7 @@ function buildPage(gym) {
   <title>${esc(gym.name)} | Evolution 20 Gym Landing Page</title>
   <meta name="description" content="${esc(gym.positioning)}">
   <link rel="canonical" href="http://localhost:4173${pageUrl(gym)}">
-  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta property="og:title" content="${esc(gym.name)} | Premium gym landing page">
   <meta property="og:description" content="${esc(gym.positioning)}">
   <meta property="og:image" content="${imgs[0]}">
@@ -715,7 +715,7 @@ function buildPage(gym) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../shared/site.css">
+  <link rel="stylesheet" href="/gyms/shared/site.css">
   <style>:root{--primary:${gym.primary};--accent:${gym.accent};}</style>
   <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'HealthClub', name: gym.name, description: gym.positioning, url: `http://localhost:4173${pageUrl(gym)}`, image: imgs[0], address: { '@type': 'PostalAddress', addressLocality: gym.city, addressCountry: 'ID' }, openingHours: gym.hours, sameAs: [gym.instagram] })}</script>
 </head>
@@ -734,7 +734,7 @@ function buildPage(gym) {
     ${order.map((key) => sections[key]).join('\n')}
   </main>
   ${buildFooter(gym)}
-  <script src="../shared/site.js" defer></script>
+  <script src="/gyms/shared/site.js" defer></script>
 </body>
 </html>`;
 }
@@ -755,11 +755,11 @@ function buildHub() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Evolution 20 Gym Sites | Local Preview Hub</title>
   <meta name="description" content="Local preview hub for 20 premium gym landing pages with bidirectional scroll animation.">
-  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="shared/site.css">
+  <link rel="stylesheet" href="/gyms/shared/site.css">
   <style>.hub{padding:120px 0}.hub h1{font-size:clamp(3rem,8vw,7rem);line-height:.9}.hub-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:32px}.hub-card{border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.055);padding:18px;display:grid;gap:12px}.hub-card:hover{border-color:var(--primary)}.hub-card strong{font-family:var(--font-heading);font-size:1.6rem;text-transform:uppercase}.hub-card span{color:var(--muted)}@media(max-width:1024px){.hub-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.hub-grid{grid-template-columns:1fr}}</style>
 </head>
 <body>
@@ -769,11 +769,11 @@ function buildHub() {
       <h1>20 premium gym landing pages.</h1>
       <p class="hero-text">Every page uses the same production motion spec: bidirectional scroll reveal, repeatable section animation, gallery lightbox, program filters, pricing tiers, WhatsApp/contact CTA, and responsive layout.</p>
       <div class="hub-grid">
-        ${gyms.map((gym, index) => `<a class="hub-card reveal" data-animate="fade-up" href="${gym.slug}/"><span>${String(index + 1).padStart(2, '0')} / ${esc(gym.city)}</span><strong>${esc(gym.name)}</strong><small>${esc(gym.positioning)}</small></a>`).join('')}
+        ${gyms.map((gym, index) => `<a class="hub-card reveal" data-animate="fade-up" href="/${gym.slug}/"><span>${String(index + 1).padStart(2, '0')} / ${esc(gym.city)}</span><strong>${esc(gym.name)}</strong><small>${esc(gym.positioning)}</small></a>`).join('')}
       </div>
     </div>
   </main>
-  <script src="shared/site.js" defer></script>
+  <script src="/gyms/shared/site.js" defer></script>
 </body>
 </html>`;
 }
@@ -788,9 +788,14 @@ function generate() {
   for (const gym of gyms) {
     const dir = path.join(outDir, gym.slug);
     ensureDir(dir);
-    fs.writeFileSync(path.join(dir, 'index.html'), buildPage(gym), 'utf8');
+    const html = buildPage(gym);
+    fs.writeFileSync(path.join(dir, 'index.html'), html, 'utf8');
+
+    const aliasDir = path.join(root, gym.slug);
+    ensureDir(aliasDir);
+    fs.writeFileSync(path.join(aliasDir, 'index.html'), html, 'utf8');
   }
-  console.log(`Generated ${gyms.length} gym landing pages in ${outDir}`);
+  console.log(`Generated ${gyms.length} gym landing pages in ${outDir} and root slug aliases`);
 }
 
 generate();

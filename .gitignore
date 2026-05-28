@@ -8,3 +8,5 @@ gyms-*.png
 __pycache__/
 *.pyc
 *.zip
+.evolution20-server.pid
+server.*.log

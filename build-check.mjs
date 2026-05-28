@@ -8,6 +8,14 @@ const fail = (message) => {
   console.error('Build check failed: ' + message);
   process.exit(1);
 };
+const localRefExists = (ref, baseDir = root) => {
+  const clean = ref.split('#')[0].split('?')[0];
+  if (!clean) return true;
+  const target = clean.startsWith('/')
+    ? path.join(root, clean.slice(1))
+    : path.resolve(baseDir, clean);
+  return fs.existsSync(target);
+};
 
 for (const file of ['index.html', 'styles.css', 'script.js']) {
   if (!exists(file)) fail(`${file} is missing`);
@@ -75,8 +83,7 @@ const localRefs = Array.from(html.matchAll(/(?:href|src)=["']([^"']+)["']/gi))
   .filter((ref) => !ref.startsWith('http') && !ref.startsWith('#') && !ref.startsWith('mailto:') && !ref.startsWith('tel:'));
 
 for (const ref of localRefs) {
-  const clean = ref.split('#')[0].split('?')[0];
-  if (clean && !exists(clean)) fail('Broken local asset path: ' + ref);
+  if (!localRefExists(ref)) fail('Broken local asset path: ' + ref);
 }
 
 console.log('Evolution 20 Gym validation passed.');
@@ -148,9 +155,9 @@ for (const slug of expectedGyms) {
     .map((match) => match[1])
     .filter((ref) => !ref.startsWith('http') && !ref.startsWith('#') && !ref.startsWith('mailto:') && !ref.startsWith('tel:'));
   for (const ref of refs) {
-    const clean = ref.split('#')[0].split('?')[0];
-    if (clean && !fs.existsSync(path.resolve(pageDir, clean))) fail(`${slug}: broken local ref ${ref}`);
+    if (!localRefExists(ref, pageDir)) fail(`${slug}: broken local ref ${ref}`);
   }
+  if (!fs.existsSync(path.join(root, slug, 'index.html'))) fail(`${slug}: root slug alias missing`);
 }
 
 console.log('20 generated gym pages validation passed.');

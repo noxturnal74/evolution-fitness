@@ -46,26 +46,26 @@ npm run build
 
 ## 20 Gym Pages
 
-- `http://localhost:4173/gyms/evolution-fitness-malang/`
-- `http://localhost:4173/gyms/ftl-gym/`
-- `http://localhost:4173/gyms/fitness-plus-dinoyo/`
-- `http://localhost:4173/gyms/fitx-gym/`
-- `http://localhost:4173/gyms/osbond-gym/`
-- `http://localhost:4173/gyms/belle-crown-gym/`
-- `http://localhost:4173/gyms/draco-gym/`
-- `http://localhost:4173/gyms/planet-gym-surabaya/`
-- `http://localhost:4173/gyms/new-icon-gym/`
-- `http://localhost:4173/gyms/speedrocky-gym/`
-- `http://localhost:4173/gyms/warriors-gym-surabaya/`
-- `http://localhost:4173/gyms/audid-gym/`
-- `http://localhost:4173/gyms/champion-gym-surabaya/`
-- `http://localhost:4173/gyms/crystal-gym-aerobic/`
-- `http://localhost:4173/gyms/m-gym-malang/`
-- `http://localhost:4173/gyms/dm-gym-yogyakarta/`
-- `http://localhost:4173/gyms/ocigen-fitness/`
-- `http://localhost:4173/gyms/optimum-fitness-cafe/`
-- `http://localhost:4173/gyms/blackbox-gym-bausasran/`
-- `http://localhost:4173/gyms/glanzfit-yogyakarta/`
+- `http://localhost:4173/evolution-fitness-malang/`
+- `http://localhost:4173/ftl-gym/`
+- `http://localhost:4173/fitness-plus-dinoyo/`
+- `http://localhost:4173/fitx-gym/`
+- `http://localhost:4173/osbond-gym/`
+- `http://localhost:4173/belle-crown-gym/`
+- `http://localhost:4173/draco-gym/`
+- `http://localhost:4173/planet-gym-surabaya/`
+- `http://localhost:4173/new-icon-gym/`
+- `http://localhost:4173/speedrocky-gym/`
+- `http://localhost:4173/warriors-gym-surabaya/`
+- `http://localhost:4173/audid-gym/`
+- `http://localhost:4173/champion-gym-surabaya/`
+- `http://localhost:4173/crystal-gym-aerobic/`
+- `http://localhost:4173/m-gym-malang/`
+- `http://localhost:4173/dm-gym-yogyakarta/`
+- `http://localhost:4173/ocigen-fitness/`
+- `http://localhost:4173/optimum-fitness-cafe/`
+- `http://localhost:4173/blackbox-gym-bausasran/`
+- `http://localhost:4173/glanzfit-yogyakarta/`
 
 ## Batch System
 
