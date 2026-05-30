@@ -46,6 +46,13 @@ const imageSets = {
 };
 
 const featuredCopy = {
+  'evolution-fitness-malang': {
+    headline: 'Gym lokal Malang untuk kelas studio, latihan beban, dan personal training.',
+    intro: 'Evolution Fitness Malang diposisikan sebagai benchmark kualitas halaman: informatif, mudah dibaca, dan langsung mengarahkan calon member ke WhatsApp, lokasi, kelas, serta kebutuhan latihan yang relevan.',
+    audience: 'Pemula, member aktif, pencari kelas studio, dan calon member yang ingin tanya paket PT atau membership sebelum datang.',
+    area: 'Malang. Gunakan Google Maps untuk rute terbaru dan WhatsApp untuk cek jadwal kelas atau paket latihan.',
+    hours: 'Setiap hari 06.00-21.00. Konfirmasi jadwal kelas dan admin sebelum berkunjung.'
+  },
   'honam-gym': {
     headline: 'Gym lokal di area Dau untuk latihan rutin yang praktis.',
     intro: 'Honam Gym cocok untuk pemula, mahasiswa, dan pekerja sekitar Dau/Karangwidoro yang ingin latihan tanpa alur pendaftaran yang rumit.',
@@ -660,8 +667,8 @@ function buildPage(gym) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0b0d0f">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#151515">
   <title>${esc(metaTitle(gym))}</title>
   <meta name="description" content="${esc(metaDescription(gym))}">
   <link rel="canonical" href="${fullUrl(gym)}">
@@ -725,7 +732,11 @@ function buildSharedJs() {
 }
 
 function buildMobileCssPatch() {
-  return `@media(max-width:520px){html,body,main,.hero,.section{width:100%;max-width:100vw;overflow-x:hidden}.container,.hero-grid{width:calc(100vw - 32px);max-width:calc(100vw - 32px)}.container>*,.hero-grid>*{max-width:100%}.hero-grid{display:block}.hero-copy{width:100%;max-width:100%;overflow:visible}.section-heading,.section-copy,.hero-status,.map-card,.cta-panel,.info-card{width:100%;max-width:100%;overflow:hidden}h1,h2,h3,.hero-kicker,.hero-text,.hero-status p,.hero-status small,.info-card p,.section-heading p,.section-copy p{display:block;width:100%;max-width:100%;white-space:normal;word-break:break-word;overflow-wrap:anywhere}h1{font-size:clamp(2.45rem,12.5vw,3.05rem)}h2{font-size:clamp(1.85rem,9vw,2.45rem);line-height:1}.hero-kicker{font-size:1.08rem;line-height:1.24}.hero-text{font-size:1rem;line-height:1.62}.hero-status,.hero-status *,.nav-shell,.nav-shell *{min-width:0}.hero-actions{display:grid;grid-template-columns:1fr;width:100%;max-width:100%;gap:10px}.hero-actions .btn{width:100%;max-width:100%;min-width:0;padding-left:12px;padding-right:12px}.hero-status{margin-top:28px}.nav-shell{width:100%;max-width:calc(100vw - 24px)}.brand-lockup span:last-child{max-width:180px}}`;
+  return `@media(max-width:520px){html,body,main,.hero,.section{width:100%;max-width:100vw;overflow-x:hidden}.container,.hero-grid{width:calc(100vw - 48px);max-width:calc(100vw - 48px)}.container>*,.hero-grid>*{max-width:100%}.hero-grid{display:block}.hero-copy{width:100%;max-width:calc(100vw - 72px);overflow:visible}.section-heading,.section-copy,.hero-status,.map-card,.cta-panel,.info-card{width:100%;max-width:calc(100vw - 72px);overflow:hidden}h1,h2,h3,.hero-kicker,.hero-text,.hero-status p,.hero-status small,.info-card p,.section-heading p,.section-copy p{display:block;width:100%;max-width:calc(100vw - 72px);white-space:normal;word-break:normal;overflow-wrap:break-word}h1{font-size:clamp(2.3rem,11vw,2.9rem)}h2{font-size:clamp(1.78rem,8.4vw,2.35rem);line-height:1}.hero-kicker{font-size:1rem;line-height:1.28}.hero-text{font-size:1rem;line-height:1.62}.hero-status,.hero-status *,.nav-shell,.nav-shell *{min-width:0}.hero-actions{display:grid;grid-template-columns:1fr;width:100%;max-width:calc(100vw - 72px);gap:10px}.hero-actions .btn{width:100%;max-width:100%;min-width:0;padding-left:12px;padding-right:12px}.hero-status{margin-top:28px}.nav-shell{width:100%;max-width:calc(100vw - 24px)}.brand-lockup span:last-child{max-width:170px;color:#f7f7f7}}`;
+}
+
+function buildBreathableCssPatch() {
+  return `html{color-scheme:light dark}body{background:#f6f5f1;color:#151515}body::after{opacity:.22}.site-header{background:linear-gradient(180deg,rgba(15,15,15,.94),rgba(21,21,21,.72) 70%,transparent)}.nav-shell{--muted:rgba(255,255,255,.72);--line:rgba(255,255,255,.16);background:rgba(21,21,21,.82);box-shadow:0 18px 42px rgba(0,0,0,.22);color:#f7f7f7}.brand-lockup,.brand-lockup span:last-child{color:#f7f7f7;text-shadow:0 1px 14px rgba(0,0,0,.34)}.brand-mark{background:linear-gradient(145deg,color-mix(in srgb,var(--primary) 18%,#fff),color-mix(in srgb,var(--primary) 34%,#151515));color:#fff;box-shadow:inset 0 1px rgba(255,255,255,.22)}.hero,.site-footer{--text:#fafafa;--muted:rgba(250,250,250,.76);--line:rgba(255,255,255,.16);color:var(--text);background:#151515}.hero-media{background:#151515}.hero-media::after{background:linear-gradient(90deg,rgba(15,15,15,.88),rgba(21,21,21,.54) 48%,rgba(15,15,15,.80)),linear-gradient(0deg,rgba(15,15,15,.92),transparent 48%,rgba(21,21,21,.22))}.section{--text:#151515;--muted:rgba(21,21,21,.68);--line:rgba(21,21,21,.13);color:var(--text);background:#f7f6f2;border-top:1px solid rgba(21,21,21,.08)}.section h2,.section h3,.directory h1,.directory h2{color:var(--text)}.section .eyebrow{color:color-mix(in srgb,var(--primary) 82%,#161616)}.muted-section{--text:#f8fafc;--muted:rgba(248,250,252,.74);--line:rgba(255,255,255,.16);color:var(--text);background:radial-gradient(circle at 10% 0,color-mix(in srgb,var(--primary) 20%,transparent),transparent 32%),linear-gradient(135deg,#151515,#202020 62%,#151515)}#quick-info,#membership,#support,#location,#reviews,#faq{background:#f7f6f2}#membership{background:linear-gradient(135deg,color-mix(in srgb,var(--primary) 9%,#fafafa),#f5f5f0 52%,#efefea)}#support{background:#fafafa}#location{background:linear-gradient(180deg,#f7f6f2,#eeeeea)}#reviews{background:#f5f5f0}#faq{background:#fafafa}#gallery{background:linear-gradient(135deg,#181818,color-mix(in srgb,var(--primary) 18%,#232323),#1b1b1b)}#join{--text:#fff;--muted:rgba(255,255,255,.82);--line:rgba(255,255,255,.24);color:#fff;background:linear-gradient(135deg,color-mix(in srgb,var(--primary) 88%,#151515),color-mix(in srgb,var(--accent) 62%,#1b1b1b))}.info-card,.price-card,.support-card,.map-card,.faq-item,.directory-card{background:rgba(255,255,255,.78);border-color:rgba(18,18,18,.12);box-shadow:0 16px 48px rgba(20,20,20,.08);backdrop-filter:blur(14px)}.price-card.featured{background:linear-gradient(145deg,color-mix(in srgb,var(--primary) 13%,#fff),rgba(255,255,255,.86));box-shadow:0 18px 54px color-mix(in srgb,var(--primary) 18%,rgba(15,15,15,.12))}.muted-section .program-card,.muted-section .gallery-card{background:rgba(255,255,255,.075);border-color:rgba(255,255,255,.16);box-shadow:0 18px 54px rgba(0,0,0,.22)}.muted-section .filter-button{background:rgba(255,255,255,.08);color:rgba(255,255,255,.72)}#join .cta-panel{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.24);box-shadow:0 22px 60px rgba(0,0,0,.18)}.btn-primary,.nav-cta{box-shadow:0 16px 34px color-mix(in srgb,var(--primary) 22%,transparent)}.btn-secondary,.btn-card{background:rgba(255,255,255,.58);border-color:rgba(21,21,21,.16);color:#151515}.hero .btn-secondary,.site-footer .btn-secondary,.muted-section .btn-secondary,.muted-section .btn-card{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:#fff}.pill-list span,.contact-list a{background:color-mix(in srgb,var(--accent) 10%,#fff);border-color:color-mix(in srgb,var(--accent) 30%,rgba(21,21,21,.14));color:#151515}.directory{--text:#151515;--muted:rgba(21,21,21,.68);--line:rgba(21,21,21,.14);color:var(--text);background:radial-gradient(circle at 14% 8%,color-mix(in srgb,var(--primary) 14%,transparent),transparent 30%),linear-gradient(135deg,#fafafa,#f1f0eb)}.directory-card{background:rgba(255,255,255,.80)}@media(max-width:760px){.section{padding-block:64px}.hero{background:#151515}.muted-section{background:linear-gradient(135deg,#171717,#222)}}`;
 }
 
 function buildHomePage(gyms) {
@@ -738,8 +749,8 @@ function buildHomePage(gyms) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="dark">
-  <meta name="theme-color" content="#0b0d0f">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#151515">
   <title>Direktori Landing Page Gym Malang | Info Lokasi, Fasilitas, Kontak</title>
   <meta name="description" content="Direktori landing page gym Malang untuk membandingkan lokasi, fasilitas, program latihan, kontak resmi, dan akses Google Maps sebelum berkunjung.">
   <link rel="canonical" href="${siteUrl}/">
@@ -816,7 +827,7 @@ function generate() {
   const gyms = loadGyms();
   ensureDir(outDir);
   ensureDir(sharedDir);
-  fs.writeFileSync(path.join(sharedDir, 'site.css'), buildSharedCss() + buildMobileCssPatch(), 'utf8');
+  fs.writeFileSync(path.join(sharedDir, 'site.css'), buildSharedCss() + buildBreathableCssPatch() + buildMobileCssPatch(), 'utf8');
   fs.writeFileSync(path.join(sharedDir, 'site.js'), buildSharedJs(), 'utf8');
   fs.writeFileSync(path.join(root, 'index.html'), buildHomePage(gyms), 'utf8');
   fs.writeFileSync(path.join(outDir, 'index.html'), buildHub(gyms), 'utf8');
