@@ -118,6 +118,7 @@ assertCommonHtml(rootHtml, 'homepage');
 assertLocalRefs(rootHtml, 'homepage');
 if (!/Direktori Landing Page Gym Malang/i.test(rootHtml)) fail('homepage: directory headline missing');
 if (!/Lihat Detail/i.test(rootHtml)) fail('homepage: detail CTA missing');
+if (!/gsap@3\.13\.0\/dist\/gsap\.min\.js/i.test(rootHtml) || !/ScrollTrigger\.min\.js/i.test(rootHtml)) fail('homepage: GSAP scripts missing');
 
 const hubHtml = read('gyms/index.html');
 assertCommonHtml(hubHtml, 'gyms hub');
@@ -132,6 +133,7 @@ if (!/clamp\(/i.test(sharedCss)) fail('shared CSS missing responsive clamp typog
 if (!/overflow-x:\s*hidden/i.test(sharedCss)) fail('shared CSS missing overflow-x hidden');
 if (!/js-ready/i.test(sharedJs)) fail('shared JS missing js-ready');
 if (!/ScrollMotionController/i.test(sharedJs)) fail('shared JS missing ScrollMotionController');
+if (!/gsap\.registerPlugin/i.test(sharedJs) || !/ScrollTrigger\.batch/i.test(sharedJs)) fail('shared JS missing GSAP ScrollTrigger enhancement');
 if (!/IntersectionObserver/i.test(sharedJs)) fail('shared JS missing IntersectionObserver');
 if (!/scroll-up/i.test(sharedJs + sharedCss) || !/scroll-down/i.test(sharedJs + sharedCss)) fail('shared bidirectional scroll classes missing');
 if (!/Escape/i.test(sharedJs)) fail('shared JS missing Escape handling');
@@ -166,6 +168,7 @@ for (const slug of expectedGyms) {
   if (!/data-lightbox-src/i.test(page)) fail(`${slug}: missing gallery lightbox hooks`);
   if (!/<details class=["']faq-item/i.test(page)) fail(`${slug}: FAQ accordion missing`);
   if (!/google\.com\/maps/i.test(page)) fail(`${slug}: Google Maps CTA missing`);
+  if (!/gsap@3\.13\.0\/dist\/gsap\.min\.js/i.test(page) || !/ScrollTrigger\.min\.js/i.test(page)) fail(`${slug}: GSAP scripts missing`);
   if (!/wa\.me|instagram\.com|linktr\.ee|business\.site|google\.com\/maps|https?:\/\/[^"']+/i.test(page)) fail(`${slug}: contact CTA missing`);
   if (/data-join-form|<form\b/i.test(page)) fail(`${slug}: outdated form flow still present`);
   if (!new RegExp(`<link\\s+rel=["']canonical["'][^>]+${siteUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\/${slug}\\/`, 'i').test(page)) fail(`${slug}: canonical URL is not production URL`);
