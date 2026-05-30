@@ -1,42 +1,57 @@
-# Deployment Report — Evolution Fitness Static Gym Pages
+# DEPLOYMENT_REPORT.md
+**Date:** 2026-05-31  
+**Branch:** kiro-uiux-rebuild
 
-We have successfully deployed the refactored, beautiful, and highly-performant static gym landing pages directly to production on Vercel.
+---
 
-## GitHub Configuration
-- **Branch**: `antigravity-uiux-cleanup`
-- **Commit SHA**: `25d782c` (Refactor static gym pages with Antigravity UIUX cleanup)
-- **GitHub Repository**: [noxturnal74/evolution-fitness](https://github.com/noxturnal74/evolution-fitness)
-- **PR Branch Link**: [Create Pull Request](https://github.com/noxturnal74/evolution-fitness/pull/new/antigravity-uiux-cleanup)
+## Build Status
 
-## Vercel Production
-- **Production URL**: [https://project-xc6z6.vercel.app](https://project-xc6z6.vercel.app)
-- **Preview / Unique Deployment URL**: [https://project-xc6z6-8n149s252-albertwilliamsaputra-6336s-projects.vercel.app](https://project-xc6z6-8n149s252-albertwilliamsaputra-6336s-projects.vercel.app)
-- **Deployment ID**: `dpl_A1eQpuD3w3anuaZQeHgSdLMiKHtH`
-- **Build Status**: `READY` (COMPLETED SUCCESSFUL)
-
-## Build Process & Validation Output
-The Vercel pipeline fetched the project, triggered the static build step `npm run build` (`node build-check.mjs`), which generated and verified all static artifacts:
-```text
-> evolution-fitness-malang@1.0.0 build
-> node build-check.mjs
-
+```
 Production content validation passed.
 27 generated gym pages validation passed.
-Build Completed in /vercel/output [2s]
-Deploying outputs...
-▲ Aliased     https://project-xc6z6.vercel.app
 ```
 
-## Checked Routes
-The following critical routes have been verified as live, fast, and 200 OK:
-- [x] **Homepage Directory**: [https://project-xc6z6.vercel.app/](https://project-xc6z6.vercel.app/)
-- [x] **Gyms Hub Index**: [https://project-xc6z6.vercel.app/gyms/](https://project-xc6z6.vercel.app/gyms/)
-- [x] **Evolution Fitness Malang**: [https://project-xc6z6.vercel.app/evolution-fitness-malang/](https://project-xc6z6.vercel.app/evolution-fitness-malang/)
-- [x] **FTL Gym**: [https://project-xc6z6.vercel.app/ftl-gym/](https://project-xc6z6.vercel.app/ftl-gym/)
-- [x] **Honam Gym**: [https://project-xc6z6.vercel.app/honam-gym/](https://project-xc6z6.vercel.app/honam-gym/)
-- [x] **Fitness Plus Dinoyo**: [https://project-xc6z6.vercel.app/fitness-plus-dinoyo/](https://project-xc6z6.vercel.app/fitness-plus-dinoyo/)
-- [x] **Glanzfit Yogyakarta**: [https://project-xc6z6.vercel.app/glanzfit-yogyakarta/](https://project-xc6z6.vercel.app/glanzfit-yogyakarta/)
+## GitHub Branch
 
-## Handover & Verifications
-- **Design Tokens**: Standardized CSS variables correctly compiled into [site.css](https://project-xc6z6.vercel.app/gyms/shared/site.css).
-- **Interactions**: Highly robust JavaScript logic successfully compiled into [site.js](https://project-xc6z6.vercel.app/gyms/shared/site.js), incorporating full `prefers-reduced-motion` compliance, bidirectional observers, and accessible lightbox modals.
+- Branch: `kiro-uiux-rebuild`
+- Remote: `https://github.com/noxturnal74/evolution-fitness`
+- Push command: `git push origin kiro-uiux-rebuild`
+
+## Vercel Deployment
+
+- Live URL: `https://project-xc6z6.vercel.app/`
+- Deploy command: `npx vercel --prod --yes`
+- Vercel auto-deploys from GitHub on push to main/master
+
+## Routes Verified (Post-Build)
+
+All 27 gym pages exist at both:
+- `/gyms/[slug]/index.html` (canonical)
+- `/[slug]/index.html` (root alias)
+
+Sample routes:
+- `/evolution-fitness-malang/` ✅
+- `/gyms/evolution-fitness-malang/` ✅
+- `/ftl-gym/` ✅
+- `/gyms/ftl-gym/` ✅
+- `/glanzfit-yogyakarta/` ✅
+- `/gyms/glanzfit-yogyakarta/` ✅
+
+## Shared Assets
+
+- `/gyms/shared/site.css` ✅
+- `/gyms/shared/site.js` ✅
+- `/assets/favicon.svg` ✅
+
+## Post-Deploy Checklist
+
+- [ ] Open `https://project-xc6z6.vercel.app/` — directory loads
+- [ ] Open `https://project-xc6z6.vercel.app/evolution-fitness-malang/` — gym page loads
+- [ ] Check mobile layout at 375px width
+- [ ] Verify mobile nav opens/closes
+- [ ] Verify FAQ accordion opens/closes
+- [ ] Verify gallery lightbox opens/closes with Escape key
+- [ ] Verify sticky CTA appears after scrolling
+- [ ] Verify program filter buttons work
+- [ ] Check browser console for errors
+- [ ] Run PageSpeed Insights on homepage and one gym page

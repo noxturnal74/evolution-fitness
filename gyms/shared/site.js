@@ -1,100 +1,109 @@
 /* ==========================================================================
-   SHARED JAVASCRIPT — SYSTEM MOTIONS & INTERACTION
+   SHARED JAVASCRIPT — INTERACTIONS & SCROLL SYSTEM
    ========================================================================== */
 
 (() => {
   'use strict';
-  
-  // DOM Selectors with Safety Guards
+
+  /* --- Utilities --- */
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
-  
   const focusableSelector = 'a[href], button:not([disabled]), summary, [tabindex]:not([tabindex="-1"])';
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  
-  // Animation System State
+
+  /* --- State --- */
   const state = {
     direction: 'down',
     lastY: window.scrollY,
     ticking: false,
     lastFocus: null
   };
-  
+
+  /* Mark JS as ready — enables CSS animation states */
   document.body.classList.add('js-ready');
-  
-  /* 1. HEADER & INTERACTIVE NAVIGATION */
+
+  /* =========================================================================
+     1. NAVIGATION
+     ========================================================================= */
   function initNav() {
     const header = $('[data-header]');
     const btn = $('[data-menu-toggle]');
     const links = $('[data-nav-links]');
     const anchors = $$('.nav-links a');
-    
-    if (btn && links) {
-      btn.addEventListener('click', () => {
-        const open = links.classList.toggle('is-open');
-        btn.setAttribute('aria-expanded', String(open));
-      });
-      
-      anchors.forEach(a => a.addEventListener('click', () => {
-        links.classList.remove('is-open');
-        btn.setAttribute('aria-expanded', 'false');
-      }));
+
+    if (!btn || !links) return;
+
+    function closeMenu() {
+      links.classList.remove('is-open');
+      btn.setAttribute('aria-expanded', 'false');
     }
-    
-    // Smooth navigation active marker linking using IntersectionObserver
+
+    btn.addEventListener('click', () => {
+      const open = links.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+    });
+
+    anchors.forEach(a => a.addEventListener('click', closeMenu));
+
+    /* Close on outside click */
+    document.addEventListener('click', e => {
+      if (links.classList.contains('is-open') && !links.contains(e.target) && !btn.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    /* Active section highlighting */
     const sections = $$('main section[id]');
-    const obs = ('IntersectionObserver' in window) ? new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        anchors.forEach(a => {
-          const active = a.getAttribute('href') === '#' + e.target.id;
-          a.classList.toggle('is-active', active);
-          if (active) {
-            a.setAttribute('aria-current', 'true');
-          } else {
-            a.removeAttribute('aria-current');
-          }
+    if ('IntersectionObserver' in window && sections.length) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (!e.isIntersecting) return;
+          anchors.forEach(a => {
+            const active = a.getAttribute('href') === '#' + e.target.id;
+            a.classList.toggle('is-active', active);
+            if (active) a.setAttribute('aria-current', 'true');
+            else a.removeAttribute('aria-current');
+          });
         });
-      });
-    }, { threshold: 0.28, rootMargin: '-20% 0px -55% 0px' }) : null;
-    
-    sections.forEach(s => obs?.observe(s));
-    
-    // Header scrolled and sticky CTA visibility behaviors
+      }, { threshold: 0.25, rootMargin: '-15% 0px -60% 0px' });
+      sections.forEach(s => obs.observe(s));
+    }
+
+    /* Header scroll state + sticky CTA */
+    let scrollRaf;
     window.addEventListener('scroll', () => {
-      if (header) {
-        header.classList.toggle('is-scrolled', window.scrollY > 24);
-      }
-      
-      const stickyCta = $('[data-sticky-cta]');
-      if (stickyCta) {
-        stickyCta.classList.toggle('is-visible', window.scrollY > 900);
-      }
+      if (scrollRaf) return;
+      scrollRaf = requestAnimationFrame(() => {
+        scrollRaf = null;
+        if (header) header.classList.toggle('is-scrolled', window.scrollY > 20);
+        const stickyCta = $('[data-sticky-cta]');
+        if (stickyCta) stickyCta.classList.toggle('is-visible', window.scrollY > 800);
+      });
     }, { passive: true });
   }
-  
-  /* 2. DIRECTIONAL SCROLL MOTION SYSTEM (NON-GSAP FALLBACK) */
+
+  /* =========================================================================
+     2. SCROLL MOTION CONTROLLER
+     ========================================================================= */
   const ScrollMotionController = {
     observer: null,
     elements: [],
-    
+
     init() {
       this.elements = $$('[data-animate], .reveal');
-      
+
       if (reduceMotion.matches) {
         this.elements.forEach(e => e.classList.add('is-visible'));
         return;
       }
-      
-      // Scroll direction passive tracking
+
+      /* Scroll direction tracking */
       window.addEventListener('scroll', () => {
         if (state.ticking) return;
         state.ticking = true;
-        
         requestAnimationFrame(() => {
           const y = window.scrollY;
-          // Apply a 4px tolerance filter to suppress micro jitter
-          if (Math.abs(y - state.lastY) > 4) {
+          if (Math.abs(y - state.lastY) > 3) {
             state.direction = y > state.lastY ? 'down' : 'up';
             state.lastY = y;
           }
@@ -102,79 +111,76 @@
           state.ticking = false;
         });
       }, { passive: true });
-      
+
       if (!('IntersectionObserver' in window)) {
         this.elements.forEach(e => e.classList.add('is-visible'));
         return;
       }
-      
-      // Bidirectional entering and leaving triggers
+
       this.observer = new IntersectionObserver(entries => {
         entries.forEach(e => {
           const el = e.target;
           if (e.isIntersecting) {
             el.classList.remove('is-exiting', 'scroll-up', 'scroll-down');
             el.classList.add('is-visible', 'scroll-' + state.direction);
-            
-            // Custom motion analytics/event hook
-            el.dispatchEvent(new CustomEvent('animation:enter', {
-              bubbles: true,
-              detail: { direction: state.direction }
-            }));
+            el.dispatchEvent(new CustomEvent('animation:enter', { bubbles: true, detail: { direction: state.direction } }));
           } else {
             el.classList.remove('is-visible');
             el.classList.add('is-exiting');
           }
         });
-      }, { threshold: 0.16, rootMargin: '0px 0px -10% 0px' });
-      
+      }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
+
       this.elements.forEach((e, i) => {
-        // Stagger transitions slightly
-        e.style.transitionDelay = (Math.min(i % 4, 3) * 45) + 'ms';
+        e.style.transitionDelay = (Math.min(i % 5, 4) * 40) + 'ms';
         this.observer.observe(e);
       });
     },
-    
+
     updateParallax() {
       if (reduceMotion.matches) return;
-      
       $$('[data-parallax-speed]').forEach(el => {
-        const speed = Number(el.dataset.parallaxSpeed || 0.08);
+        const speed = Number(el.dataset.parallaxSpeed || 0.07);
         const r = el.getBoundingClientRect();
-        if (r.bottom < -80 || r.top > window.innerHeight + 80) return;
-        
-        const off = Math.max(-34, Math.min(34, (r.top - window.innerHeight / 2) * speed));
+        if (r.bottom < -100 || r.top > window.innerHeight + 100) return;
+        const off = Math.max(-30, Math.min(30, (r.top - window.innerHeight / 2) * speed));
         el.style.setProperty('--parallax-y', off + 'px');
       });
     },
-    
-    getState() {
-      return {
-        direction: state.direction,
-        elements: this.elements.length
-      };
-    }
+
+    getState() { return { direction: state.direction, elements: this.elements.length }; }
   };
-  
+
   window.ScrollMotionController = ScrollMotionController;
-  
-  /* 3. CARD FILTERING (PROGRAM SECTION) */
+
+  /* =========================================================================
+     3. PROGRAM FILTER
+     ========================================================================= */
   function initFilters() {
-    $$('[data-filter]').forEach(btn => {
+    const buttons = $$('[data-filter]');
+    if (!buttons.length) return;
+
+    buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         const filter = btn.dataset.filter;
-        
-        $$('[data-filter]').forEach(b => b.classList.toggle('is-active', b === btn));
-        
+        buttons.forEach(b => {
+          b.classList.toggle('is-active', b === btn);
+          b.setAttribute('aria-pressed', String(b === btn));
+        });
         $$('[data-program]').forEach(card => {
           const matched = filter === 'all' || (card.dataset.program || '').includes(filter);
           card.classList.toggle('is-hidden', !matched);
         });
       });
     });
+
+    /* Set initial aria-pressed */
+    buttons.forEach(b => b.setAttribute('aria-pressed', b.classList.contains('is-active') ? 'true' : 'false'));
   }
-  
-  /* 4. PLAN PACKAGES INTERACTION */
+
+  /* =========================================================================
+     4. MEMBERSHIP PACKAGE SELECTION
+     ========================================================================= */
   function initPackages() {
     $$('[data-select-package]').forEach(el => {
       el.addEventListener('click', () => {
@@ -183,16 +189,16 @@
       });
     });
   }
-  
-  /* 5. FOCUS MANAGEMENT & TRAPPING TOOL */
+
+  /* =========================================================================
+     5. FOCUS TRAP
+     ========================================================================= */
   function trap(container, event) {
     if (event.key !== 'Tab') return;
-    const f = $$(focusableSelector, container);
+    const f = $$(focusableSelector, container).filter(el => !el.closest('[hidden]'));
     if (!f.length) return;
-    
     const first = f[0];
     const last = f[f.length - 1];
-    
     if (event.shiftKey && document.activeElement === first) {
       event.preventDefault();
       last.focus();
@@ -201,86 +207,83 @@
       first.focus();
     }
   }
-  
-  /* 6. ACCESSIBLE GALLERY LIGHTBOX DIALOG */
+
+  /* =========================================================================
+     6. GALLERY LIGHTBOX
+     ========================================================================= */
   function initLightbox() {
     const lb = $('[data-lightbox]');
-    const img = $('[data-lightbox-image]');
-    const title = $('[data-lightbox-title]');
-    const text = $('[data-lightbox-text]');
+    const imgEl = $('[data-lightbox-image]');
+    const titleEl = $('[data-lightbox-title]');
+    const textEl = $('[data-lightbox-text]');
     const panel = $('.lightbox-panel');
-    
-    if (!lb || !img || !title || !text) return;
-    
-    function close() {
+
+    if (!lb || !imgEl || !titleEl || !textEl) return;
+
+    function openLightbox(src, title, text) {
+      imgEl.src = src;
+      imgEl.alt = title || 'Preview visual';
+      titleEl.textContent = title || 'Visual';
+      textEl.textContent = text || '';
+      lb.classList.add('is-open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+      requestAnimationFrame(() => panel?.focus());
+    }
+
+    function closeLightbox() {
       lb.classList.remove('is-open');
       lb.setAttribute('aria-hidden', 'true');
       document.body.classList.remove('modal-open');
       state.lastFocus?.focus?.();
     }
-    
+
     $$('[data-lightbox-src]').forEach(btn => {
       btn.addEventListener('click', () => {
         state.lastFocus = document.activeElement;
-        img.src = btn.dataset.lightboxSrc;
-        img.alt = btn.dataset.lightboxTitle || 'Preview visual';
-        title.textContent = btn.dataset.lightboxTitle || 'Visual';
-        text.textContent = btn.dataset.lightboxText || '';
-        
-        lb.classList.add('is-open');
-        lb.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('modal-open');
-        panel?.focus();
+        openLightbox(btn.dataset.lightboxSrc, btn.dataset.lightboxTitle, btn.dataset.lightboxText);
       });
     });
-    
-    $$('[data-lightbox-close]').forEach(b => b.addEventListener('click', close));
-    
+
+    $$('[data-lightbox-close]').forEach(b => b.addEventListener('click', closeLightbox));
     lb.addEventListener('keydown', e => trap(lb, e));
-    
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && lb.classList.contains('is-open')) {
-        close();
-      }
+      if (e.key === 'Escape' && lb.classList.contains('is-open')) closeLightbox();
     });
   }
-  
-  /* 7. FAQ ACCORDION (MUTUALLY EXCLUSIVE DETAILS) */
+
+  /* =========================================================================
+     7. FAQ ACCORDION
+     ========================================================================= */
   function initFaq() {
     $$('details.faq-item').forEach(item => {
       item.addEventListener('toggle', () => {
         if (!item.open) return;
         $$('details.faq-item').forEach(other => {
-          if (other !== item) {
-            other.open = false;
-          }
+          if (other !== item) other.open = false;
         });
       });
     });
   }
-  
-  /* 8. ROBUST IMAGE BROKEN FALLBACKS */
+
+  /* =========================================================================
+     8. IMAGE ERROR FALLBACK
+     ========================================================================= */
   function imageFallback() {
     document.addEventListener('error', e => {
-      const target = e.target;
-      if (!(target instanceof HTMLImageElement)) return;
-      
-      const holder = target.closest('.hero-media, .program-card, .gallery-card, .lightbox-panel');
-      if (holder) {
-        holder.classList.add('image-failed');
-      }
-      target.remove();
+      if (!(e.target instanceof HTMLImageElement)) return;
+      const holder = e.target.closest('.hero-media, .program-card, .gallery-card, .lightbox-panel');
+      if (holder) holder.classList.add('image-failed');
+      e.target.remove();
     }, true);
   }
-  
-  // Listen for reduced motion changes dynamically
+
+  /* Reduced motion dynamic change */
   reduceMotion.addEventListener?.('change', () => {
-    if (reduceMotion.matches) {
-      $$('[data-animate], .reveal').forEach(e => e.classList.add('is-visible'));
-    }
+    if (reduceMotion.matches) $$('[data-animate], .reveal').forEach(e => e.classList.add('is-visible'));
   });
-  
-  // Initialization Trigger
+
+  /* Boot */
   imageFallback();
   initNav();
   ScrollMotionController.init();
@@ -289,15 +292,16 @@
   initLightbox();
   initFaq();
 })();
+
 /* ==========================================================================
-   GSAP SYSTEM ENGINE — ADVANCED BIDIRECTIONAL MOTION PARALLAX
+   GSAP ENHANCEMENT — PROGRESSIVE ENHANCEMENT LAYER
    ========================================================================== */
 
 (() => {
   'use strict';
-  
+
   const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  
+
   function ready(fn) {
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', fn, { once: true });
@@ -305,148 +309,83 @@
       fn();
     }
   }
-  
+
   ready(() => {
     const gsap = window.gsap;
     const ScrollTrigger = window.ScrollTrigger;
-    
-    // Skip completely if libraries are missing or user prefers reduced motion
+
     if (!gsap || !ScrollTrigger || reduce.matches) return;
-    
+
     gsap.registerPlugin(ScrollTrigger);
     document.body.classList.add('gsap-ready');
-    
-    // Set standard premium durations and eases
-    gsap.defaults({
-      duration: 0.62,
-      ease: 'power2.out',
-      overwrite: 'auto'
-    });
-    
-    // Initialize reveal starts
-    gsap.set('.reveal', { autoAlpha: 0, y: 28 });
-    
-    // Core Layout Entrances
-    gsap.from('.nav-shell', {
-      autoAlpha: 0,
-      y: -18,
-      duration: 0.7,
-      ease: 'power3.out',
-      delay: 0.04
-    });
-    
-    gsap.from('.hero h1', {
-      autoAlpha: 0,
-      y: 34,
-      duration: 0.9,
-      ease: 'power3.out',
-      delay: 0.12
-    });
-    
-    gsap.from('.hero .eyebrow, .hero-kicker, .hero-text, .hero-actions', {
-      autoAlpha: 0,
-      y: 18,
-      duration: 0.7,
-      stagger: 0.08,
-      ease: 'power2.out',
-      delay: 0.22
-    });
-    
-    // Bidirectional scroll trigger batches
+
+    gsap.defaults({ duration: 0.58, ease: 'power2.out', overwrite: 'auto' });
+
+    /* Set initial hidden state for reveal elements */
+    gsap.set('.reveal', { autoAlpha: 0, y: 24 });
+
+    /* Hero entrance sequence */
+    const tl = gsap.timeline({ delay: 0.06 });
+    tl.from('.nav-shell', { autoAlpha: 0, y: -16, duration: 0.6, ease: 'power3.out' }, 0);
+    tl.from('.hero h1', { autoAlpha: 0, y: 30, duration: 0.8, ease: 'power3.out' }, 0.10);
+    tl.from('.hero .eyebrow', { autoAlpha: 0, y: 14, duration: 0.6 }, 0.18);
+    tl.from('.hero-kicker', { autoAlpha: 0, y: 14, duration: 0.6 }, 0.24);
+    tl.from('.hero-text', { autoAlpha: 0, y: 14, duration: 0.6 }, 0.30);
+    tl.from('.hero-actions', { autoAlpha: 0, y: 14, duration: 0.6 }, 0.36);
+    tl.from('.hero-status', { autoAlpha: 0, scale: 0.97, duration: 0.7, ease: 'power2.out' }, 0.20);
+
+    /* Bidirectional scroll batch reveals */
     ScrollTrigger.batch('.reveal', {
-      start: 'top 86%',
-      end: 'bottom 8%',
-      interval: 0.08,
-      batchMax: 6,
-      
-      // Scroll down: animate in from positive translate offset
+      start: 'top 88%',
+      end: 'bottom 6%',
+      interval: 0.07,
+      batchMax: 5,
       onEnter: batch => gsap.to(batch, {
-        autoAlpha: 1,
-        y: 0,
-        stagger: { each: 0.055, from: 'start' },
-        duration: 0.64,
-        ease: 'power2.out'
+        autoAlpha: 1, y: 0,
+        stagger: { each: 0.05, from: 'start' },
+        duration: 0.60, ease: 'power2.out'
       }),
-      
-      // Scroll up: re-animate in with smooth entry from negative offset
       onEnterBack: batch => gsap.to(batch, {
-        autoAlpha: 1,
-        y: 0,
-        stagger: { each: 0.035, from: 'end' },
-        duration: 0.48,
-        ease: 'power2.out'
+        autoAlpha: 1, y: 0,
+        stagger: { each: 0.03, from: 'end' },
+        duration: 0.44, ease: 'power2.out'
       }),
-      
-      // Scroll back up: retreat slightly to prepare for next scroll down
       onLeaveBack: batch => gsap.to(batch, {
-        autoAlpha: 0.38,
-        y: -18,
-        stagger: 0.02,
-        duration: 0.32,
-        ease: 'power1.out'
+        autoAlpha: 0.22, y: -16,
+        stagger: 0.02, duration: 0.28, ease: 'power1.out'
       })
     });
-    
-    // Gentle premium parallax for Hero media container
+
+    /* Hero parallax */
     const heroImg = document.querySelector('.hero-media img');
     if (heroImg) {
       gsap.to(heroImg, {
-        yPercent: 6,
-        scale: 1.06,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.hero',
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 1
-        }
+        yPercent: 7, scale: 1.07, ease: 'none',
+        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 1.2 }
       });
     }
-    
-    // Hover micro-motion effects for all cards
+
+    /* Card hover micro-animations */
     gsap.utils.toArray('.program-card, .gallery-card, .price-card, .directory-card').forEach(card => {
-      card.addEventListener('pointerenter', () => gsap.to(card, {
-        y: -6,
-        scale: 1.012,
-        duration: 0.24,
-        ease: 'power2.out'
-      }));
-      
-      card.addEventListener('pointerleave', () => gsap.to(card, {
-        y: 0,
-        scale: 1,
-        duration: 0.28,
-        ease: 'power2.out'
-      }));
-      
-      card.addEventListener('focusin', () => gsap.to(card, {
-        y: -4,
-        scale: 1.008,
-        duration: 0.22,
-        ease: 'power2.out'
-      }));
-      
-      card.addEventListener('focusout', () => gsap.to(card, {
-        y: 0,
-        scale: 1,
-        duration: 0.24,
-        ease: 'power2.out'
-      }));
+      let hoverTween;
+      card.addEventListener('pointerenter', () => {
+        hoverTween = gsap.to(card, { y: -5, scale: 1.010, duration: 0.22, ease: 'power2.out', overwrite: true });
+      });
+      card.addEventListener('pointerleave', () => {
+        gsap.to(card, { y: 0, scale: 1, duration: 0.26, ease: 'power2.out', overwrite: true });
+      });
+      card.addEventListener('focusin', () => gsap.to(card, { y: -3, scale: 1.006, duration: 0.20, ease: 'power2.out', overwrite: true }));
+      card.addEventListener('focusout', () => gsap.to(card, { y: 0, scale: 1, duration: 0.22, ease: 'power2.out', overwrite: true }));
     });
-    
-    // Perform trigger recalculation on fully loaded document
-    let refreshTimer;
+
+    /* Refresh on load and resize */
+    let resizeTimer;
     window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
-    
     window.addEventListener('resize', () => {
-      clearTimeout(refreshTimer);
-      refreshTimer = setTimeout(() => ScrollTrigger.refresh(), 160);
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => ScrollTrigger.refresh(), 180);
     }, { passive: true });
-    
-    // Globals exposure for QA debug hooks
-    window.GymGsapMotion = {
-      refresh: () => ScrollTrigger.refresh(),
-      version: gsap.version
-    };
+
+    window.GymGsapMotion = { refresh: () => ScrollTrigger.refresh(), version: gsap.version };
   });
 })();

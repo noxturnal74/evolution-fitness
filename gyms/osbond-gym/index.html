@@ -9,14 +9,21 @@
   <meta name="description" content="Cari info Osbond Gym di Indonesia: lokasi, fasilitas, program latihan, kontak admin, dan akses Google Maps untuk membantu calon member sebelum berkunjung.">
   <link rel="canonical" href="https://project-xc6z6.vercel.app/osbond-gym/">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta name="robots" content="index, follow">
+  <meta property="og:locale" content="id_ID">
   <meta property="og:title" content="Osbond Gym Indonesia | Info Lokasi, Fasilitas, dan Kontak">
   <meta property="og:description" content="Cari info Osbond Gym di Indonesia: lokasi, fasilitas, program latihan, kontak admin, dan akses Google Maps untuk membantu calon member sebelum berkunjung.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=85&w=1600&auto=format&fit=crop">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://project-xc6z6.vercel.app/osbond-gym/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Osbond Gym Indonesia | Info Lokasi, Fasilitas, dan Kontak">
+  <meta name="twitter:description" content="Cari info Osbond Gym di Indonesia: lokasi, fasilitas, program latihan, kontak admin, dan akses Google Maps untuk membantu calon member sebelum berkunjung.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=85&w=1600&auto=format&fit=crop">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=85&w=1600&auto=format&fit=crop" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/gyms/shared/site.css">
   <style>:root{--primary:#ef1b1b;--accent:#ffffff;}</style>
@@ -34,7 +41,7 @@
   </header>
   <main id="main-content" tabindex="-1">
     
-    <section id="hero" class="hero site-chain" aria-labelledby="page-title">
+    <section id="hero" class="hero" aria-labelledby="page-title">
       <div class="hero-media" data-parallax-speed="0.08">
         <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=85&w=1600&auto=format&fit=crop" alt="Ilustrasi suasana latihan gym" width="1800" height="1200" fetchpriority="high" loading="eager">
       </div>
@@ -62,7 +69,7 @@
       </div>
     </section>
     
-    <section id="quick-info" class="section compact-section" aria-labelledby="quick-title">
+    <section id="quick-info" class="section section-light compact-section" aria-labelledby="quick-title">
       <div class="container">
         <div class="section-heading reveal" data-animate="fade-up">
           <p class="eyebrow">Ringkasan</p>
@@ -75,7 +82,7 @@
       </div>
     </section>
     
-    <section id="facilities" class="section muted-section" aria-labelledby="facilities-title">
+    <section id="facilities" class="section section-dark" aria-labelledby="facilities-title">
       <div class="container">
         <div class="section-heading reveal" data-animate="fade-up">
           <p class="eyebrow">Fasilitas & Program</p>
@@ -83,11 +90,11 @@
           <p>Data di bawah memakai sumber yang tersedia. Detail harga, jadwal kelas, dan ketersediaan trainer sebaiknya tetap dikonfirmasi langsung.</p>
         </div>
         <div class="filter-bar reveal" data-animate="fade-up" aria-label="Filter fasilitas dan program">
-          <button class="filter-button is-active" type="button" data-filter="all">Semua</button>
-          <button class="filter-button" type="button" data-filter="fasilitas">Fasilitas</button>
-          <button class="filter-button" type="button" data-filter="latihan">Latihan</button>
-          <button class="filter-button" type="button" data-filter="kelas">Kelas</button>
-          <button class="filter-button" type="button" data-filter="pendampingan">Pendampingan</button>
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Semua</button>
+          <button class="filter-button" type="button" data-filter="fasilitas" aria-pressed="false">Fasilitas</button>
+          <button class="filter-button" type="button" data-filter="latihan" aria-pressed="false">Latihan</button>
+          <button class="filter-button" type="button" data-filter="kelas" aria-pressed="false">Kelas</button>
+          <button class="filter-button" type="button" data-filter="pendampingan" aria-pressed="false">Pendampingan</button>
         </div>
         <div class="program-grid">
           <article class="program-card reveal" data-program="fasilitas" data-animate="fade-up">
@@ -122,7 +129,7 @@
       </div>
     </section>
     
-    <section id="membership" class="section" aria-labelledby="membership-title">
+    <section id="membership" class="section section-light" aria-labelledby="membership-title">
       <div class="container">
         <div class="section-heading reveal" data-animate="fade-up">
           <p class="eyebrow">Harga / Membership</p>
@@ -150,7 +157,7 @@
       </div>
     </section>
     
-    <section id="support" class="section support-section" aria-labelledby="support-title">
+    <section id="support" class="section section-white" aria-labelledby="support-title">
       <div class="container split">
         <div class="section-copy reveal" data-animate="fade-right">
           <p class="eyebrow">Pendampingan Latihan</p>
@@ -170,7 +177,7 @@
       </div>
     </section>
     
-    <section id="gallery" class="section muted-section" aria-labelledby="gallery-title">
+    <section id="gallery" class="section section-dark" aria-labelledby="gallery-title">
       <div class="container">
         <div class="section-heading reveal" data-animate="fade-up">
           <p class="eyebrow">Visual</p>
@@ -178,24 +185,24 @@
           <p>Gambar berikut dipakai sebagai ilustrasi sampai foto resmi dari gym tersedia di project. Caption tidak mengklaim sebagai foto asli lokasi.</p>
         </div>
         <div class="gallery-grid">
-          <button class="gallery-card  reveal" type="button" data-animate="fade-up" data-lightbox-src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=85&w=1600&auto=format&fit=crop" data-lightbox-title="30+ klub" data-lightbox-text="Ilustrasi 30+ klub untuk membantu calon member membayangkan tipe latihan. Cek Instagram atau Maps Osbond Gym untuk foto lokasi terbaru.">
-              <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=85&w=1600&auto=format&fit=crop" alt="Ilustrasi 30+ klub" width="1000" height="760" loading="lazy">
+          <button class="gallery-card  reveal" type="button" data-animate="fade-up" aria-label="Lihat ilustrasi 30+ klub" data-lightbox-src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=85&w=1200&auto=format&fit=crop" data-lightbox-title="30+ klub" data-lightbox-text="Ilustrasi 30+ klub untuk membantu calon member membayangkan tipe latihan. Cek Instagram atau Maps Osbond Gym untuk foto lokasi terbaru.">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=85&w=1200&auto=format&fit=crop" alt="Ilustrasi 30+ klub" width="1000" height="760" loading="lazy">
               <span><strong>30+ klub</strong><small>Ilustrasi suasana latihan</small></span>
-            </button><button class="gallery-card tall reveal" type="button" data-animate="fade-up" data-lightbox-src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=85&w=1200&auto=format&fit=crop" data-lightbox-title="160+ kelas" data-lightbox-text="Ilustrasi 160+ kelas untuk membantu calon member membayangkan tipe latihan. Cek Instagram atau Maps Osbond Gym untuk foto lokasi terbaru.">
-              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=85&w=1200&auto=format&fit=crop" alt="Ilustrasi 160+ kelas" width="1000" height="760" loading="lazy">
+            </button><button class="gallery-card tall reveal" type="button" data-animate="fade-up" aria-label="Lihat ilustrasi 160+ kelas" data-lightbox-src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=85&w=1200&auto=format&fit=crop" data-lightbox-title="160+ kelas" data-lightbox-text="Ilustrasi 160+ kelas untuk membantu calon member membayangkan tipe latihan. Cek Instagram atau Maps Osbond Gym untuk foto lokasi terbaru.">
+              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=85&w=1200&auto=format&fit=crop" alt="Ilustrasi 160+ kelas" width="1000" height="760" loading="lazy">
               <span><strong>160+ kelas</strong><small>Ilustrasi suasana latihan</small></span>
-            </button><button class="gallery-card  reveal" type="button" data-animate="fade-up" data-lightbox-src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=85&w=1200&auto=format&fit=crop" data-lightbox-title="Peralatan premium" data-lightbox-text="Ilustrasi peralatan premium untuk membantu calon member membayangkan tipe latihan. Cek Instagram atau Maps Osbond Gym untuk foto lokasi terbaru.">
-              <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=85&w=1200&auto=format&fit=crop" alt="Ilustrasi peralatan premium" width="1000" height="760" loading="lazy">
+            </button><button class="gallery-card  reveal" type="button" data-animate="fade-up" aria-label="Lihat ilustrasi peralatan premium" data-lightbox-src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=85&w=1200&auto=format&fit=crop" data-lightbox-title="Peralatan premium" data-lightbox-text="Ilustrasi peralatan premium untuk membantu calon member membayangkan tipe latihan. Cek Instagram atau Maps Osbond Gym untuk foto lokasi terbaru.">
+              <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=85&w=1200&auto=format&fit=crop" alt="Ilustrasi peralatan premium" width="1000" height="760" loading="lazy">
               <span><strong>Peralatan premium</strong><small>Ilustrasi suasana latihan</small></span>
-            </button><button class="gallery-card wide reveal" type="button" data-animate="fade-up" data-lightbox-src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=85&w=1200&auto=format&fit=crop" data-lightbox-title="Kolam, sauna, steam" data-lightbox-text="Ilustrasi kolam, sauna, steam untuk membantu calon member membayangkan tipe latihan. Cek Instagram atau Maps Osbond Gym untuk foto lokasi terbaru.">
-              <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=85&w=1200&auto=format&fit=crop" alt="Ilustrasi kolam, sauna, steam" width="1000" height="760" loading="lazy">
+            </button><button class="gallery-card wide reveal" type="button" data-animate="fade-up" aria-label="Lihat ilustrasi kolam, sauna, steam" data-lightbox-src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=85&w=1200&auto=format&fit=crop" data-lightbox-title="Kolam, sauna, steam" data-lightbox-text="Ilustrasi kolam, sauna, steam untuk membantu calon member membayangkan tipe latihan. Cek Instagram atau Maps Osbond Gym untuk foto lokasi terbaru.">
+              <img src="https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=85&w=1200&auto=format&fit=crop" alt="Ilustrasi kolam, sauna, steam" width="1000" height="760" loading="lazy">
               <span><strong>Kolam, sauna, steam</strong><small>Ilustrasi suasana latihan</small></span>
             </button>
         </div>
       </div>
     </section>
     
-    <section id="location" class="section" aria-labelledby="location-title">
+    <section id="location" class="section section-light" aria-labelledby="location-title">
       <div class="container split">
         <div class="section-copy reveal" data-animate="fade-right">
           <p class="eyebrow">Lokasi</p>
@@ -215,7 +222,7 @@
       </div>
     </section>
     
-    <section id="reviews" class="section muted-section" aria-labelledby="reviews-title">
+    <section id="reviews" class="section section-white" aria-labelledby="reviews-title">
       <div class="container split">
         <div class="section-copy reveal" data-animate="fade-right">
           <p class="eyebrow">Ulasan & Validasi</p>
@@ -229,7 +236,7 @@
       </div>
     </section>
     
-    <section id="faq" class="section muted-section" aria-labelledby="faq-title">
+    <section id="faq" class="section section-light" aria-labelledby="faq-title">
       <div class="container">
         <div class="section-heading reveal" data-animate="fade-up">
           <p class="eyebrow">FAQ</p>
@@ -241,7 +248,7 @@
       </div>
     </section>
     
-    <section id="join" class="section join-section" aria-labelledby="join-title">
+    <section id="join" class="section section-accent" aria-labelledby="join-title">
       <div class="container split">
         <div class="section-copy reveal" data-animate="fade-right">
           <p class="eyebrow">Langkah Berikutnya</p>

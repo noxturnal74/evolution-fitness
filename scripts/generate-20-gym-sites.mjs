@@ -342,7 +342,11 @@ function headlineText(gym) {
 
 function metaTitle(gym) {
   const city = gym.city === 'Indonesia' ? 'Indonesia' : gym.city;
-  return `${gym.name} ${city} | Info Lokasi, Fasilitas, dan Kontak`;
+  // Avoid repeating city if gym name already contains it
+  const nameHasCity = gym.name.toLowerCase().includes(city.toLowerCase());
+  return nameHasCity
+    ? `${gym.name} | Info Lokasi, Fasilitas, dan Kontak`
+    : `${gym.name} ${city} | Info Lokasi, Fasilitas, dan Kontak`;
 }
 
 function metaDescription(gym) {
@@ -384,7 +388,7 @@ function facilityDescription(facility, gym) {
 function buildHero(gym, imgs) {
   const second = secondaryLink(gym);
   return `
-    <section id="hero" class="hero site-${esc(gym.archetype)}" aria-labelledby="page-title">
+    <section id="hero" class="hero" aria-labelledby="page-title">
       <div class="hero-media" data-parallax-speed="0.08">
         <img src="${imgs[0]}" alt="Ilustrasi suasana latihan gym" width="1800" height="1200" fetchpriority="high" loading="eager">
       </div>
@@ -421,7 +425,7 @@ function buildQuickInfo(gym) {
     ['Kanal kontak', contactLabel(gym)]
   ];
   return `
-    <section id="quick-info" class="section compact-section" aria-labelledby="quick-title">
+    <section id="quick-info" class="section section-light compact-section" aria-labelledby="quick-title">
       <div class="container">
         <div class="section-heading reveal" data-animate="fade-up">
           <p class="eyebrow">Ringkasan</p>
@@ -441,7 +445,7 @@ function buildFacilities(gym, imgs) {
     ...gym.programs.map((item) => ({ title: localLabel(item), type: programTag(item), text: programDescription(item, gym) }))
   ];
   return `
-    <section id="facilities" class="section muted-section" aria-labelledby="facilities-title">
+    <section id="facilities" class="section section-dark" aria-labelledby="facilities-title">
       <div class="container">
         <div class="section-heading reveal" data-animate="fade-up">
           <p class="eyebrow">Fasilitas & Program</p>
@@ -449,11 +453,11 @@ function buildFacilities(gym, imgs) {
           <p>Data di bawah memakai sumber yang tersedia. Detail harga, jadwal kelas, dan ketersediaan trainer sebaiknya tetap dikonfirmasi langsung.</p>
         </div>
         <div class="filter-bar reveal" data-animate="fade-up" aria-label="Filter fasilitas dan program">
-          <button class="filter-button is-active" type="button" data-filter="all">Semua</button>
-          <button class="filter-button" type="button" data-filter="fasilitas">Fasilitas</button>
-          <button class="filter-button" type="button" data-filter="latihan">Latihan</button>
-          <button class="filter-button" type="button" data-filter="kelas">Kelas</button>
-          <button class="filter-button" type="button" data-filter="pendampingan">Pendampingan</button>
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">Semua</button>
+          <button class="filter-button" type="button" data-filter="fasilitas" aria-pressed="false">Fasilitas</button>
+          <button class="filter-button" type="button" data-filter="latihan" aria-pressed="false">Latihan</button>
+          <button class="filter-button" type="button" data-filter="kelas" aria-pressed="false">Kelas</button>
+          <button class="filter-button" type="button" data-filter="pendampingan" aria-pressed="false">Pendampingan</button>
         </div>
         <div class="program-grid">
           ${cards.map((card, index) => `<article class="program-card reveal" data-program="${esc(card.type)}" data-animate="fade-up">
@@ -474,7 +478,7 @@ function buildMembership(gym) {
     ['Personal training / kelas', 'Konfirmasi jadwal trainer, kelas, dan biaya tambahan bila tersedia.']
   ];
   return `
-    <section id="membership" class="section" aria-labelledby="membership-title">
+    <section id="membership" class="section section-light" aria-labelledby="membership-title">
       <div class="container">
         <div class="section-heading reveal" data-animate="fade-up">
           <p class="eyebrow">Harga / Membership</p>
@@ -495,7 +499,7 @@ function buildMembership(gym) {
 
 function buildSupport(gym) {
   return `
-    <section id="support" class="section support-section" aria-labelledby="support-title">
+    <section id="support" class="section section-white" aria-labelledby="support-title">
       <div class="container split">
         <div class="section-copy reveal" data-animate="fade-right">
           <p class="eyebrow">Pendampingan Latihan</p>
@@ -518,7 +522,7 @@ function buildSupport(gym) {
 
 function buildGallery(gym, imgs) {
   return `
-    <section id="gallery" class="section muted-section" aria-labelledby="gallery-title">
+    <section id="gallery" class="section section-dark" aria-labelledby="gallery-title">
       <div class="container">
         <div class="section-heading reveal" data-animate="fade-up">
           <p class="eyebrow">Visual</p>
@@ -526,10 +530,10 @@ function buildGallery(gym, imgs) {
           <p>Gambar berikut dipakai sebagai ilustrasi sampai foto resmi dari gym tersedia di project. Caption tidak mengklaim sebagai foto asli lokasi.</p>
         </div>
         <div class="gallery-grid">
-          ${imgs.slice(0, 4).map((img, index) => {
+          ${imgs.slice(1, 5).map((img, index) => {
             const title = localLabel(gym.facilities[index % gym.facilities.length]);
             const text = `Ilustrasi ${title.toLowerCase()} untuk membantu calon member membayangkan tipe latihan. Cek Instagram atau Maps ${gym.name} untuk foto lokasi terbaru.`;
-            return `<button class="gallery-card ${index === 1 ? 'tall' : index === 3 ? 'wide' : ''} reveal" type="button" data-animate="fade-up" data-lightbox-src="${img}" data-lightbox-title="${esc(title)}" data-lightbox-text="${esc(text)}">
+            return `<button class="gallery-card ${index === 1 ? 'tall' : index === 3 ? 'wide' : ''} reveal" type="button" data-animate="fade-up" aria-label="Lihat ilustrasi ${esc(title.toLowerCase())}" data-lightbox-src="${img}" data-lightbox-title="${esc(title)}" data-lightbox-text="${esc(text)}">
               <img src="${img}" alt="Ilustrasi ${esc(title.toLowerCase())}" width="1000" height="760" loading="lazy">
               <span><strong>${esc(title)}</strong><small>Ilustrasi suasana latihan</small></span>
             </button>`;
@@ -542,7 +546,7 @@ function buildGallery(gym, imgs) {
 function buildLocation(gym) {
   const second = secondaryLink(gym);
   return `
-    <section id="location" class="section" aria-labelledby="location-title">
+    <section id="location" class="section section-light" aria-labelledby="location-title">
       <div class="container split">
         <div class="section-copy reveal" data-animate="fade-right">
           <p class="eyebrow">Lokasi</p>
@@ -565,7 +569,7 @@ function buildLocation(gym) {
 
 function buildReviews(gym) {
   return `
-    <section id="reviews" class="section muted-section" aria-labelledby="reviews-title">
+    <section id="reviews" class="section section-white" aria-labelledby="reviews-title">
       <div class="container split">
         <div class="section-copy reveal" data-animate="fade-right">
           <p class="eyebrow">Ulasan & Validasi</p>
@@ -589,7 +593,7 @@ function buildFaq(gym) {
     ['Apakah jadwal kelas dan jam buka bisa berubah?', 'Bisa. Jadwal kelas, jam operasional, dan promo sebaiknya dicek langsung melalui admin atau kanal resmi.']
   ];
   return `
-    <section id="faq" class="section muted-section" aria-labelledby="faq-title">
+    <section id="faq" class="section section-light" aria-labelledby="faq-title">
       <div class="container">
         <div class="section-heading reveal" data-animate="fade-up">
           <p class="eyebrow">FAQ</p>
@@ -604,7 +608,7 @@ function buildFaq(gym) {
 
 function buildJoin(gym) {
   return `
-    <section id="join" class="section join-section" aria-labelledby="join-title">
+    <section id="join" class="section section-accent" aria-labelledby="join-title">
       <div class="container split">
         <div class="section-copy reveal" data-animate="fade-right">
           <p class="eyebrow">Langkah Berikutnya</p>
@@ -673,14 +677,21 @@ function buildPage(gym) {
   <meta name="description" content="${esc(metaDescription(gym))}">
   <link rel="canonical" href="${fullUrl(gym)}">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta name="robots" content="index, follow">
+  <meta property="og:locale" content="id_ID">
   <meta property="og:title" content="${esc(metaTitle(gym))}">
   <meta property="og:description" content="${esc(metaDescription(gym))}">
   <meta property="og:image" content="${imgs[0]}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="${fullUrl(gym)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${esc(metaTitle(gym))}">
+  <meta name="twitter:description" content="${esc(metaDescription(gym))}">
+  <meta name="twitter:image" content="${imgs[0]}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preload" as="image" href="${imgs[0]}" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/gyms/shared/site.css">
   <style>:root{--primary:${gym.primary || '#f97316'};--accent:${gym.accent || '#22c55e'};}</style>
@@ -2580,6 +2591,8 @@ function buildHomePage(gyms) {
   <meta name="description" content="Direktori landing page gym Malang untuk membandingkan lokasi, fasilitas, program latihan, kontak resmi, dan akses Google Maps sebelum berkunjung.">
   <link rel="canonical" href="${siteUrl}/">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta name="robots" content="index, follow">
+  <meta property="og:locale" content="id_ID">
   <meta property="og:title" content="Direktori Landing Page Gym Malang">
   <meta property="og:description" content="Bandingkan gym berdasarkan lokasi, fasilitas, program latihan, kontak resmi, dan Google Maps.">
   <meta property="og:image" content="${imageSets.local[0]}">
@@ -2654,8 +2667,15 @@ function generate() {
   const gyms = loadGyms();
   ensureDir(outDir);
   ensureDir(sharedDir);
-  fs.writeFileSync(path.join(sharedDir, 'site.css'), buildSharedCss() + buildBreathableCssPatch() + buildMobileCssPatch(), 'utf8');
-  fs.writeFileSync(path.join(sharedDir, 'site.js'), buildSharedJs() + '\n' + buildGsapEnhancementJs() + '\n', 'utf8');
+
+  // Read CSS/JS from pre-built shared files if they exist, otherwise fall back to inline builders
+  const cssSourcePath = path.join(sharedDir, 'site.css');
+  const jsSourcePath = path.join(sharedDir, 'site.js');
+  const cssContent = fs.existsSync(cssSourcePath) ? fs.readFileSync(cssSourcePath, 'utf8') : (buildSharedCss() + buildBreathableCssPatch() + buildMobileCssPatch());
+  const jsContent = fs.existsSync(jsSourcePath) ? fs.readFileSync(jsSourcePath, 'utf8') : (buildSharedJs() + '\n' + buildGsapEnhancementJs() + '\n');
+  fs.writeFileSync(cssSourcePath, cssContent, 'utf8');
+  fs.writeFileSync(jsSourcePath, jsContent, 'utf8');
+
   fs.writeFileSync(path.join(root, 'index.html'), buildHomePage(gyms), 'utf8');
   fs.writeFileSync(path.join(outDir, 'index.html'), buildHub(gyms), 'utf8');
   fs.writeFileSync(path.join(outDir, 'gyms.config.json'), JSON.stringify(gyms.map(publicGymConfig), null, 2), 'utf8');
