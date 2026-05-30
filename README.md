@@ -1,23 +1,22 @@
-# Evolution 20 Gym
+# Direktori Landing Page Gym Malang
 
-Premium static landing page for a transformation-focused fitness brand.
+Static website untuk direktori landing page gym Indonesia dengan fokus halaman Malang yang rapi, informatif, dan siap dipresentasikan ke calon klien.
 
-## Built From
+## Isi Website
 
-- `product-spec-scroll-animation-v1.0/01-PRD-bidirectional-scroll-animation.docx`
-- `product-spec-scroll-animation-v1.0/02-SRS-bidirectional-scroll-animation.docx`
-- `product-spec-scroll-animation-v1.0/03-SDD-bidirectional-scroll-animation.docx`
-- `product-spec-scroll-animation-v1.0/04-UI-UX-FLOW-bidirectional-scroll-animation.docx`
-- `product-spec-scroll-animation-v1.0/05-TASK-BREAKDOWN-bidirectional-scroll-animation.docx`
-- `product-spec-scroll-animation-v1.0/.codex/skills/ui-ux-pro-max/SKILL.md`
+- Homepage direktori: `/`
+- Hub semua halaman: `/gyms/`
+- 27 halaman gym individual, tersedia sebagai root slug dan alias `/gyms/[slug]/`
+- Shared visual system: `gyms/shared/site.css`
+- Shared interaction script: `gyms/shared/site.js`
 
-## Design Direction
+## Prinsip Konten
 
-- Dark athletic premium style
-- Orange primary, green conversion accent
-- Barlow Condensed headings and Barlow body
-- Storytelling landing structure with repeatable bidirectional scroll animation
-- Progressive reveal, light parallax, gallery lightbox, package selector, trial modal, and WhatsApp booking generator
+- Bahasa Indonesia profesional.
+- CTA mengikuti kanal yang tersedia: WhatsApp, website resmi, Linktree, Instagram, atau Google Maps.
+- Tidak memakai coach, rating, harga, atau testimoni yang belum terverifikasi.
+- Jika foto resmi belum tersedia di project, visual diberi konteks sebagai ilustrasi suasana latihan.
+- Canonical, Open Graph URL, dan JSON-LD memakai domain produksi `https://project-xc6z6.vercel.app`.
 
 ## Run Locally
 
@@ -25,16 +24,10 @@ Premium static landing page for a transformation-focused fitness brand.
 npm run dev
 ```
 
-Open:
+Buka:
 
 ```text
-http://localhost:4173/
-```
-
-The generated 27-gym hub is available at:
-
-```text
-http://localhost:4173/gyms/
+http://127.0.0.1:4173/
 ```
 
 ## Validate
@@ -44,45 +37,18 @@ npm run validate
 npm run build
 ```
 
-## 27 Gym Pages
+## Generate Pages
 
-- `http://localhost:4173/evolution-fitness-malang/`
-- `http://localhost:4173/ftl-gym/`
-- `http://localhost:4173/fitness-plus-dinoyo/`
-- `http://localhost:4173/fitx-gym/`
-- `http://localhost:4173/osbond-gym/`
-- `http://localhost:4173/belle-crown-gym/`
-- `http://localhost:4173/draco-gym/`
-- `http://localhost:4173/planet-gym-surabaya/`
-- `http://localhost:4173/new-icon-gym/`
-- `http://localhost:4173/speedrocky-gym/`
-- `http://localhost:4173/warriors-gym-surabaya/`
-- `http://localhost:4173/audid-gym/`
-- `http://localhost:4173/champion-gym-surabaya/`
-- `http://localhost:4173/crystal-gym-aerobic/`
-- `http://localhost:4173/m-gym-malang/`
-- `http://localhost:4173/dm-gym-yogyakarta/`
-- `http://localhost:4173/ocigen-fitness/`
-- `http://localhost:4173/optimum-fitness-cafe/`
-- `http://localhost:4173/blackbox-gym-bausasran/`
-- `http://localhost:4173/glanzfit-yogyakarta/`
-- `http://localhost:4173/honam-gym/`
-- `http://localhost:4173/strength-club-malang/`
-- `http://localhost:4173/de-gym-platinum-malang/`
-- `http://localhost:4173/the-gym-asifa-pro/`
-- `http://localhost:4173/3c-gym-malang/`
-- `http://localhost:4173/fitnessworks-black-lanners/`
-- `http://localhost:4173/prestige-fitness-malang/`
+```bash
+node scripts/generate-20-gym-sites.mjs
+```
 
-## Batch System
+Generator membaca `gyms/gyms.config.json`, lalu menulis ulang homepage, hub, halaman `/gyms/[slug]/`, dan alias root `/[slug]/`.
 
-- `scripts/generate-20-gym-sites.mjs` regenerates the 27 static gym pages.
-- `gyms/shared/site.css` contains the shared responsive visual system.
-- `gyms/shared/site.js` contains scroll direction animation, reveal states, filters, package selection, lightbox, and WhatsApp join flow.
-- `GYMS_20_IMPLEMENTATION_REPORT.md` documents the generated pages and verification results.
-- `MALANG_GYM_EXPANSION_REPORT.md` documents the seven new Malang gym records and source strategy.
-- `prd-documents-malang-expansion-v1.0/` contains five new Word PRD documents for the researched Malang expansion gyms.
+## Local Route Check
 
-## Notes
+```powershell
+powershell -ExecutionPolicy Bypass -File ".\scripts\verify-malang-expansion.ps1"
+```
 
-Some business details are intentionally marked as placeholders because Evolution 20 Gym is treated as a new brand concept and several gym records still need final verification. Replace unverified pricing, trainer profiles, logos, and branch-specific claims with verified production data before launch.
+Script ini mengecek homepage, hub, tujuh halaman gym Malang baru, dan alias `/gyms/...`.

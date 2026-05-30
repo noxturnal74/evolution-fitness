@@ -13,6 +13,12 @@ $Slugs = @(
   "prestige-fitness-malang"
 )
 
+$Paths = @("/", "/gyms/")
+foreach ($Slug in $Slugs) {
+  $Paths += "/$Slug/"
+  $Paths += "/gyms/$Slug/"
+}
+
 $Server = Start-Process `
   -FilePath $Python `
   -ArgumentList @("-m", "http.server", "$Port", "--bind", "127.0.0.1", "--directory", ".") `
@@ -23,9 +29,9 @@ $Server = Start-Process `
 try {
   Start-Sleep -Seconds 2
 
-  foreach ($Slug in $Slugs) {
-    $Status = (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:$Port/$Slug/").StatusCode
-    Write-Output "$Slug $Status"
+  foreach ($Path in $Paths) {
+    $Status = (Invoke-WebRequest -UseBasicParsing "http://127.0.0.1:$Port$Path").StatusCode
+    Write-Output "$Path $Status"
   }
 
 } finally {
